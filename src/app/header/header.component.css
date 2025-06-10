@@ -1,0 +1,50 @@
+#image{
+    z-index: -1;
+    width: 100%;
+    height: 700px;
+    margin-top: 80px;
+    
+    padding:10px;
+
+
+
+}
+
+#login{
+    margin-top: -760px;
+    margin-left: 1400px;
+
+}
+#logins{
+padding: 8px 16px;
+    font-family: 300;
+    font-size: 14px;
+    border: 1px slid#999;
+    border-radius: 999px;
+    background-color: transparent;
+    cursor: pointer;
+}
+#logins:active{
+       background-color:deepskyblue ;
+    border: 0cap;
+
+}
+#sign-up{
+    margin-top: -35px;
+    margin-left: 1500px;
+}
+#signs-up{
+    padding: 8px 16px;
+    font-family: 300;
+    font-size: 14px;
+    border: 1px slid#999;
+    border-radius: 999px;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+#signs-up:active{
+    background-color:deepskyblue ;
+    border: 0cap;
+
+}
