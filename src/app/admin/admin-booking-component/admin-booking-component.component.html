@@ -1,0 +1,33 @@
+<p>admin-booking-component works!</p>
+<div>
+
+
+ <form (ngSubmit)="onSubmit()">
+        <h2>Booking a Car</h2> 
+     <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
+
+     <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+      <!-- <input type="text" id="cars" name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />    -->
+       
+        <select id="car-name"  value="Cars" name="car-name" [(ngModel)]="carName">
+             @for(car of carNames; track car.name){
+     
+                    <h1>{{car.name}}</h1>
+                    <option [value]="car.name">{{car.name}}</option>
+                }
+            </select><br />
+            
+
+     <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />
+
+     <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license" required [(ngModel)]="license"  />
+
+    <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
+
+    <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDtae"/> 
+
+    
+        <button  >Book</button>
+
+</form>
+     </div>

@@ -1,0 +1,27 @@
+
+
+
+
+<div id="login">
+
+  <form id="form" (ngSubmit)="onSubmit() "  >
+    
+
+    <label>Email </label>
+    <input  type="text"  name="email" [(ngModel)]="enteredemail"/>
+
+   <p> <label>Password </label>
+    <input   type="text"  name="password" [(ngModel)]="enteredpassword"/></p>
+
+  
+       <button id="button" type="submit">Login</button>
+
+       <button id="forgotpassword">Reset password</button>
+  </form>
+</div>
+
+
+<router-outlet></router-outlet> 
+
+
+

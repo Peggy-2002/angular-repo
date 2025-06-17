@@ -3,11 +3,7 @@
     width: 100%;
     height: 700px;
     margin-top: 80px;
-    
     padding:10px;
-
-
-
 }
 
 #login{
@@ -48,3 +44,25 @@ padding: 8px 16px;
     border: 0cap;
 
 }
+
+#reservations{
+   margin-left: 370px; 
+   margin-top: -26px;
+   width: 135px;
+
+}
+
+#vehicles{
+    margin-left: 570px;
+    position: relative;
+    bottom: 20px;
+}
+
+#contact{
+    margin-left: 100px;
+    position: relative;
+    bottom: 19px;
+
+    
+}
+

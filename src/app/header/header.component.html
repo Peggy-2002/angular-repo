@@ -6,10 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <img id="image" src="https://m.atcdn.co.uk/ect/media/%7Bresize%7D/4b14ab0c7868451baf5912779f112f40.jpg"/>
+    <img id="image" src="https://m.atcdn.co.uk/ect/media/%7Bresize%7D/4b14ab0c7868451baf5912779f112f40.jpg"/> 
 
-    <div id="login"><button id="logins">Login</button></div>
-    <div id="sign-up"><button id="signs-up">Sign-up</button></div>
+    <div id="login"><button (click)="login()" id="logins">Login</button></div>
+    <div id="sign-up"  (click)="createAcount()"><button id="signs-up">Sign-up</button></div>
+    <div id="reservations"  (click)="reservations()"><button>Reservations</button></div>
+    <button id="vehicles" (click)="vehicles()">Vehicles</button>
+    <button id="contact" (click)="contactUs()">Contact us</button>
 </body>
     
+<router-outlet></router-outlet> 
 
+
+<!-- this router is for child login
+what happens in login will happen here -->

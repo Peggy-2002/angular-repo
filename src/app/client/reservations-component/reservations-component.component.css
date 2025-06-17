@@ -1,0 +1,19 @@
+#div{
+    margin-left: 372px;
+    margin-top: -6px;
+    
+    /* background-color: black; */
+    width: 130px;
+    height: 85px;
+}
+#button{
+  margin-left: 7px;
+    margin-bottom: 25px;
+    width: 125px;   
+    
+}
+#cancel{
+  margin-left: 7px;
+    margin-top:- 145px;
+    width: 125px; 
+}

@@ -1,4 +1,28 @@
-<p>account-component works!</p>
 
 
+<<<<<<< HEAD
  
+=======
+
+<div id="createAccount">
+  <form id="form" (ngSubmit)="onSubmit() "  >
+    <label>Name </label>
+   <input type="text" id="name" name ="name" [(ngModel)]="name"/>
+
+   <p><label>Surname </label>
+    <input type="text"   id="surname" name="surname" [(ngModel)]="surname"/></p>
+
+    <label>Email </label>
+    <input  type="text" pattern="\S+"  title="Email should not contain spaces" id="email" name="email" [(ngModel)]="email"/>
+
+   <p> <label>Password </label>
+    <input   type="text"  pattern="\S+"  title="Password should not contain spaces"  id="password" name="password" [(ngModel)]="password"/></p>
+
+  
+      <button  id="submitbutton">Submit</button>
+        <h1>{{signUpMessage}}</h1 >
+      
+  </form>
+   
+</div>
+>>>>>>> e93d9f257f7e91e5903fc2d8604911387354adb1
