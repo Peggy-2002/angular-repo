@@ -1,0 +1,37 @@
+#login{
+    margin-left: 1400px;
+    margin-top: 70px;
+    background-color: deepskyblue;
+    height:192px;
+    width:220px;
+    padding: 3px;
+   
+}
+#form{
+    background-color: white;
+    padding: 20px;
+
+}  
+
+
+ #button:active{
+    background-color: deepskyblue;
+    border: 0cap;
+}
+#button{
+
+    margin-left: 10px;
+    margin-top: 20px;
+} 
+
+ #name{
+    margin-top: 7px;
+}
+#forgotpassword:active{
+background-color: deepskyblue;
+    border: 0cap;
+}
+#manager{
+    position: relative;
+    bottom:50px;
+} 

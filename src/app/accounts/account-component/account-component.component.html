@@ -1,30 +1,24 @@
-<p>account-component works!</p>
 
 
- <!-- <form (ngSubmit)="submitBooking()">
-        <h2>Booking a Car</h2> -->
-     <!-- <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="clientName" />
 
-     <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+<div id="createAccount">
+  <form id="form" (ngSubmit)="onSubmit() "  >
+    <label>Name </label>
+   <input type="text" id="name" name ="name" [(ngModel)]="name"/>
 
-     <input type="text"  name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />
+   <p><label>Surname </label>
+    <input type="text"   id="surname" name="surname" [(ngModel)]="surname"/></p>
 
-     <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" emal" />
+    <label>Email </label>
+    <input  type="text" pattern="\S+"  title="Email should not contain spaces" id="email" name="email" [(ngModel)]="email"/>
 
-     <input type="drivers-licence"  name ="drivers-licence" placeholder="Drivers-licence" required [(ngModel)]="driversLicence"  />
+   <p> <label>Password </label>
+    <input   type="text"  pattern="\S+"  title="Password should not contain spaces"  id="password" name="password" [(ngModel)]="password"/></p>
 
-     <input type="number"  name ="booking-payment" placeholder="Booking-payment" required [(ngModel)]="bookingPayment" />
-
-    <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="startDate" />
-
-    <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="endDate"/>
-
-    
-        <button class ="dropdown-button" type="submit">Book</button> -->
-
-     
-     
-
-     
-
-    <!-- </form> -->
+  
+      <button  id="submitbutton">Submit</button>
+        <h1>{{signUpMessage}}</h1 >
+      
+  </form>
+   
+</div>

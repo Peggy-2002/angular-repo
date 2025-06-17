@@ -1,0 +1,19 @@
+
+
+
+@if(click){
+<form (ngSubmit)="getCar()">
+    <label id="name">Name of car</label>
+    <input name="name"  type="text"  [(ngModel)]="name"/>
+    <button>SearchCar</button>
+</form>
+}
+
+@if(clicks){
+<h1>{{printCar.name}}</h1>
+<h1>{{printCar.picture}}</h1>
+<h1>{{printCar.seater}}</h1>
+<h1>{{printCar.status}}</h1>
+<button (click)="removeCar()">Remove</button>
+}
+<h1>{{carMessages}}</h1>

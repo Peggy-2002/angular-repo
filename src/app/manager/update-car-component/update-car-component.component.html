@@ -1,0 +1,20 @@
+<p>update-car-component works!</p>
+@if(click){
+<form (ngSubmit)="getCar()">
+    <label id="name">Name of car</label>
+    <input name="name"  type="text"  [(ngModel)]="names"/>
+    <button>SearchCar</button>
+</form>
+}
+
+@if(clicks){
+
+    <input name="name" [placeholder]= 'printCar.name' [(ngModel)]="name"/>
+    <input name="name" [placeholder]= 'printCar.picture' [(ngModel)]="picture"/>
+    <input name="name" [placeholder]= 'printCar.seater' [(ngModel)]="seater"/>
+    <input name="name" [placeholder]= 'printCar.status' [(ngModel)]="status"/>
+    
+
+<button (click)="updateCar()">Update</button>
+}
+<h1>{{carMessages}}</h1>

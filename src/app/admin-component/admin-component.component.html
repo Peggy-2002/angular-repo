@@ -1,1 +1,26 @@
 <p>admin-component works!</p>
+
+
+<h1>{{notifications}}</h1>
+
+@if(click){
+<button (click)="onClick()" >View bookings</button>
+
+}@else{
+<button (click) ="remove()">remove</button>
+<router-outlet></router-outlet>
+}
+
+
+<button id="reservations" (click)="onClicks()">Reservations</button>
+ <router-outlet></router-outlet> 
+
+<div (click)="logOut()"><button>Log out</button></div>
+
+<button (click)="return()">Return car</button>
+
+<button (click)="viewbookings()">View Bookings</button>
+<router-outlet></router-outlet>
+
+
+

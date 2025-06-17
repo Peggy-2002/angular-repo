@@ -1,0 +1,22 @@
+@if(click){
+<div>
+ <form (ngSubmit)="onSubmit() "  >
+    <p><label>Name </label>
+   <input type="text"  name ="name" [(ngModel)]="name"/></p>
+
+   <p><label>Picture </label>
+    <input type="text"   name="picture" [(ngModel)]="picture"/></p>
+
+    <p><label>Status </label>
+    <input  type="text"  name="status" [(ngModel)]="status"/></p>
+
+   <p> <label>Car Seaters </label>
+    <input   type="text"  name="seaters" [(ngModel)]="seaters"/></p>
+      <button >Submit</button>
+
+      
+              
+  </form>
+</div>
+}
+<h1>{{addCarMessage}}</h1>
