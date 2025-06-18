@@ -9,9 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './view-bookings-component.component.css'
 })
 export class ViewBookingsComponentComponent {
-  constructor(private dataService : DataService){
-
-  }
+  
    
 
 }
