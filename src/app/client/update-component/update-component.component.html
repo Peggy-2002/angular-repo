@@ -1,1 +1,39 @@
 <p>update-component works!</p>
+
+<div>
+    <form  class="box" (ngSubmit)="submitBooking()">
+       
+        <h2>update-bookings</h2> 
+      <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
+
+     <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+
+     <input type="text"  name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />
+
+     <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" emal" />
+
+     <input type="drivers-licence"  name ="drivers-licence" placeholder="Drivers-licence" required [(ngModel)]="license"  />
+
+     <!-- <input type="number"  name ="booking-payment" placeholder="Booking-payment" required [(ngModel)]="bookingPayment" /> -->
+
+    <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
+
+    <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/>
+
+    
+        <button   class ="dropdown-button" type="submit">save</button> 
+
+    </form>
+
+
+    <div>
+         <tr>
+                    <!-- <td>{{"clientName:" + " " + bookng }}</td> -->
+                     <!-- <td>{{"surname:" +  " "+booking.surname }}</td>
+                     <td>{{"email:" + " " +booking.email}}</td>
+                     <td>{{ "startData:" + " " + booking.startDate}},  {{ "endDate:" +  " " + booking.endDate}}</td>  
+                     <td>{{"carName:" + booking.carName}}</td> -->
+                </tr>
+               
+    </div>
+</div>

@@ -22,19 +22,14 @@ export class CancelBookingComponentComponent {
 
 
 
-
-
-
-
-
   findBookingByDriversLicence(){
     this.dataService.findBookingByDriversLicense(+this.license)
 
   }
 
   deleteBooking(){
-    console.log('deleted clicked')
-    console.log(this.license)
+    // console.log('deleted clicked')
+    // console.log(this.license)
     this.dataService.deleteBooking({
       name :this.getBooking.name,
       surname: this.getBooking.surname,

@@ -205,12 +205,15 @@ login(log : Login){
         }
 
         )
-        // alert(this.bookingform.cancelStatus)
-        
+
     }
     getBookingss(){
         return this.bookingform
 
+    }
+
+    editBooking(license :number ,bookingform:BookingForm){
+        this.httpClient.put(`/api/editBooking/${license}` ,bookingform).subscribe()
     }
 
     
