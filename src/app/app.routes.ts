@@ -120,7 +120,7 @@ export const routes: Routes = [
                         component:ViewBookingsComponentComponent,
                         children:[{
                             
-                                path:':name/bookingsdetails',
+                                path:':names/bookingsdetails',
                                  component:BookingsDetailsComponentComponent
                              
                         }

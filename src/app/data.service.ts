@@ -6,6 +6,7 @@ import { Login ,Car ,Name,Cars } from "./model";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 
+
 @Injectable({providedIn:"root"}) 
 
 export class DataService {
@@ -176,6 +177,11 @@ login(log : Login){
         
         
         
+
+    }
+
+    getBookings() : Observable<Form[]>{
+        return this.httpClient.get<Form[]>("/api/viewbookings")
 
     }
 

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { DataService } from '../../data.service';
+import { BookingForm } from '../../model';
 
 @Component({
   selector: 'app-bookings-details-component',
@@ -6,6 +8,25 @@ import { Component } from '@angular/core';
   templateUrl: './bookings-details-component.component.html',
   styleUrl: './bookings-details-component.component.css'
 })
-export class BookingsDetailsComponentComponent {
+export class BookingsDetailsComponentComponent implements OnInit {
 
+  @Input() names! :string
+
+booking :BookingForm[] =[]
+
+  click = true;
+  constructor(private dataService : DataService){
+
+  }
+
+  ngOnInit(): void {
+    this.dataService.getBookings().subscribe({
+      next :(resData) => this.booking = resData
+    })
+  }
+
+  get bookings(){
+    return this.booking.find((d) => d.name === this.names)!
+  }
+   
 }

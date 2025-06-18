@@ -1,9 +1,9 @@
-<p>view-bookings-component works!</p>
-<!-- @for(bookings of  ;track bookings.carName){
+<!-- <p>view-bookings-component works!</p> -->
+@for(booking of bookings ;track booking.carName){
     <div>
-        <button [routerLink]="[bookings.name,'bookingsdetails']" >{{bookings.name}}</button> 
+        <button [routerLink]="[booking.name,'bookingsdetails']"  >{{booking.name}}</button> 
     </div>
-     -->
-<!-- } -->
+     
+  } 
 
 <router-outlet></router-outlet> 
