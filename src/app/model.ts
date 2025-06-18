@@ -47,6 +47,8 @@ export  interface SignUp {
    }
 
 
+
+
    
     export interface Car {
    name:string;
@@ -70,5 +72,7 @@ export interface Cars {
  export interface CarName {
   name:string
  }
+
+
 
  
