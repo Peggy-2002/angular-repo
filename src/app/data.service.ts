@@ -29,6 +29,7 @@ export class DataService {
     bookings :BookingForm[]=[];
     forms:Form[]=[];
     car!:Cars
+    bookingform!: BookingForm;
     
      
 
@@ -182,6 +183,33 @@ login(log : Login){
 
     getBookings() : Observable<Form[]>{
         return this.httpClient.get<Form[]>("/api/viewbookings")
+
+    }
+
+    findBookingByDriversLicense(license: number){
+        this.httpClient.get<BookingForm>(`/api/bookings/${license}`).subscribe(response => {
+            this.bookingform =response;
+
+        })
+
+    }
+
+    getBooking(){
+        return this.httpClient.get("/api/bookings")
+    }
+
+    deleteBooking(bookingform :BookingForm){
+        // this.bookingform.cancelStatus="booking deleted"
+        this.httpClient.post<{'message':string}>("api/update-bookings",bookingform).subscribe( {
+            next:(resData) => console.log(resData)
+        }
+
+        )
+        // alert(this.bookingform.cancelStatus)
+        
+    }
+    getBookingss(){
+        return this.bookingform
 
     }
 
