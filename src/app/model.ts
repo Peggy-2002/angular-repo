@@ -22,6 +22,7 @@ export  interface SignUp {
     carName : string;
     dropOfDate :string;
     pickUpDate : string;
+    // cancelStatus:string;
    
     
    }
