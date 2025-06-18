@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions-component',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './questions-component.component.css'
 })
 export class QuestionsComponentComponent {
+  router = inject(Router)
+
+  back(){
+    this.router.navigate(["/"]);
+  }
 
 }

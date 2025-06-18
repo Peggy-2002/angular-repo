@@ -67,25 +67,25 @@ export const routes: Routes = [
               }
            ]
         },
-        {
-            path:'cars',
-            component:CarsComponent
+        // {
+        //     path:'cars',
+        //     component:CarsComponent
 
-        },
+        // },
         {
             path:'contactUs',
             component:ContactUsComponentComponent,
-            children:[
-                {
-                    path:'contact',
-                    component:ContactComponentComponent
-                },
+            // children:[
+            //     {
+            //         path:'contact',
+            //         component:ContactComponentComponent
+            //     },
 
-                {
-                    path:'questions',
-                    component:QuestionsComponentComponent
-                }
-            ]
+            //     {
+            //         path:'questions',
+            //         component:QuestionsComponentComponent
+            //     }
+            // ]
         }
 
 
@@ -218,7 +218,25 @@ export const routes: Routes = [
                         component:ViewBookingsComponentComponent
                      }
                  ]
-             }
+             },
+
+             
+                 {
+                    path:'contact',
+                    component:ContactComponentComponent
+                },
+
+                {
+                    path:'questions',
+                    component:QuestionsComponentComponent
+                },
+
+                
+              {
+            path:'cars',
+            component:CarsComponent
+
+        },
 
     ];
 

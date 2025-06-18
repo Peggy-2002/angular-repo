@@ -28,6 +28,11 @@ car : Car[] = []
     this.router.navigate(["/reservations"])
 
   }
+  // vehicles(){
+  //   this.router.navigate(["/cars"])
+    
+  // }
+
   vehicles(){
     this.router.navigate(["/cars"])
     
