@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
-import { CarName } from '../../model';
+import { Car } from '../../model';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -14,21 +14,8 @@ export class BookingComponentComponent {
   constructor(private dataService:DataService){
 
   }
-  carNames:CarName[]=[
-      {
-        name :'Peggy',
-      },
-      {
-        name:'Dudu',
-      },
-      {
-        name: 'Thabo',
-  
-      },
-  
-      {
-        name :'Jabu',
-      }
+  carNames:Car[]=[
+      
   
     ];
 
@@ -39,6 +26,35 @@ export class BookingComponentComponent {
   dropOfDtae='';
   pickUpDate='';
   carName='';
+
+
+
+  
+  status ='Available';
+
+
+  ngOnInit(): void {
+    
+            this.dataService.getCars().subscribe({
+              next: (resData) => {
+                
+                for(let i =0 ;i < resData.length;i++){
+                  if(resData[i].status === this.status){
+                    this.carNames.push(resData[i])
+                    
+                  }
+                }
+              }
+                
+                
+            });
+
+             
+     
+      }
+
+
+
 
 
  onSubmit(){

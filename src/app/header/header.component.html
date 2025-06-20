@@ -13,6 +13,13 @@
     <div id="reservations"  (click)="reservations()"><button>Reservations</button></div>
     <button id="vehicles" (click)="vehicles()">Vehicles</button>
     <button id="contact" (click)="contactUs()">Contact us</button>
+    <input id="pickUpDate" type="date" placeholder="Pick-Up-Date" [(ngModel)]="pickUpdate"/>
+    <input  id="dropOfDate" type="date" placeholder="Drop-Of-Date" [(ngModel)]="dropOfdate"/>
+    <button id="vehicle" (click)="vehicle()">FindMyVehicle</button>
+    @if(click){
+<h1>{{message}}</h1>
+    }
+    
 </body>
     
 <router-outlet></router-outlet> 

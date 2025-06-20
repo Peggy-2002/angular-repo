@@ -28,6 +28,9 @@ import { ReturnCarComponentComponent } from './admin/return-car-component/return
 import { UpdateCarComponentComponent } from './manager/update-car-component/update-car-component.component';
 import { ViewBookingsComponentComponent } from './manager/view-bookings-component/view-bookings-component.component';
 import { BookingsDetailsComponentComponent } from './manager/bookings-details-component/bookings-details-component.component';
+import { ViewComplaintsComponentComponent } from './admin/view-complaints-component/view-complaints-component.component';
+import { ComplaintsDetailsComponentComponent } from './admin/complaints-details-component/complaints-details-component.component';
+import { VehicleComponentComponent } from './client/vehicle-component/vehicle-component.component';
 
 export const routes: Routes = [
 {
@@ -187,7 +190,18 @@ export const routes: Routes = [
                              
                              }
                          ]
-                     },
+                        },
+
+                         {
+                            path:'viewComplaints',
+                            component:ViewComplaintsComponentComponent,
+                            children:[{
+                                path:':names/viewComplaintsdetails',
+                                component:ComplaintsDetailsComponentComponent
+                            }
+                        ]
+                         },
+                     
                      {
                         path:'reservations',
                         component:AdminReservationsCompoonentComponent,
@@ -237,6 +251,10 @@ export const routes: Routes = [
             component:CarsComponent
 
         },
+        {
+            path:'vehicle',
+            component:VehicleComponentComponent
+        }
 
     ];
 

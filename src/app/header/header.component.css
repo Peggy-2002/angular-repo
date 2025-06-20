@@ -66,3 +66,21 @@ padding: 8px 16px;
     
 }
 
+#pickUpDate{
+    position: relative;
+    top:300px;
+right: 170px;
+}
+#dropOfDate{
+    position: relative;
+    top:300px;
+    right: 170px;
+    
+}
+#vehicle{
+     position: relative;
+    top:300px;
+right: 170px;
+
+}
+

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
-import { CarName } from '../../model';
+import { CarName ,Car} from '../../model';
 
 @Component({
   selector: 'app-booking-form-component',
@@ -9,27 +9,15 @@ import { CarName } from '../../model';
   templateUrl: './booking-form-component.component.html',
   styleUrl: './booking-form-component.component.css'
 })
-export class BookingFormComponentComponent {
+export class BookingFormComponentComponent implements OnInit{
 
   constructor(private dataService : DataService){
 
   }
+  status ='Available';
 
-  carNames:CarName[]=[
-    {
-      name :'Peggy',
-    },
-    {
-      name:'Dudu',
-    },
-    {
-      name: 'Thabo',
-
-    },
-
-    {
-      name :'Jabu',
-    }
+  carNames:Car[]=[
+    
 
   ];
 
@@ -40,6 +28,34 @@ export class BookingFormComponentComponent {
   dropOfDtae='';
   pickUpDate='';
   carName='';
+
+
+
+
+  
+
+
+  ngOnInit(): void {
+    
+            this.dataService.getCars().subscribe({
+              next: (resData) => {
+                
+                for(let i =0 ;i < resData.length;i++){
+                  if(resData[i].status === this.status){
+                    this.carNames.push(resData[i])
+                    
+
+
+                  }
+                }
+              }
+                
+                
+            });
+
+             
+     
+      }
 
   
 
@@ -53,24 +69,37 @@ export class BookingFormComponentComponent {
      dropOfDate: this.dropOfDtae,
       pickUpDate : this.pickUpDate,
       carName : this.carName,
+
       
     
-    }
+    });
+    
+  
+    
+  }
+
+
+    
+
+  }
+
+    
+    
+    
     
     
 
    
 
-  );
+  
 
-  //console.log(this.userId)
-    
-  }
+  
+  
+  
 
 
  
    
-  }
 
 
 
