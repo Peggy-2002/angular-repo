@@ -12,12 +12,15 @@ export class ContactUsComponentComponent {
 
   
 
+  //  contact(){
+  //   this.router.navigate(["/contactUs/contact"])
+  // }
    contact(){
-    this.router.navigate(["/contactUs/contact"])
+    this.router.navigate(["/contact"])
   }
 
   questions(){
-    this.router.navigate(["/contactUs/questions"])
+    this.router.navigate(["questions"])
   }
 
 }

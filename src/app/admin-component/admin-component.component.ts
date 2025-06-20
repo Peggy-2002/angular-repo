@@ -53,4 +53,12 @@ export class AdminComponentComponent {
 viewbookings(){
       this.router.navigate(["/admin/viewbooking"])
     }
+
+    get complaintsNotification(){
+     return this.dataService.complaintNotification
+    }
+
+    viewComplaints(){
+      this.router.navigate(["/admin/viewComplaints"])
+    }
 }

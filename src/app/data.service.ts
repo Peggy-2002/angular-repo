@@ -1,6 +1,6 @@
 import { inject, Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BookingForm, SignUp } from "./model";
+import { BookingForm, Complaints, SignUp } from "./model";
 import { Role ,Form} from "./model";
 import { Login ,Car ,Name,Cars } from "./model";
 import { Router } from "@angular/router";
@@ -24,12 +24,14 @@ export class DataService {
 
     deleteCarMessage='';
     updateMessage='';
+    complaintMessages='';
 
 
     bookings :BookingForm[]=[];
     forms:Form[]=[];
     car!:Cars
     bookingform!: BookingForm;
+    complaintNotifications :Complaints[]=[];
     
      
 
@@ -144,15 +146,21 @@ login(log : Login){
 
     booking(booking :BookingForm){
         console.log(booking)
+        
 
         this.httpClient.post<{'message':string}>("/api/booking",booking).subscribe({
             next:(resData) => this.bookingMessage = resData.message
         });
+    
         this.bookings.push(booking)
         
         console.log(this.bookings)
 
     }
+
+   
+
+
 
     get notification(){
         return this.bookings.length + this.forms.length;
@@ -215,6 +223,29 @@ login(log : Login){
     editBooking(license :number ,bookingform:BookingForm){
         this.httpClient.put(`/api/editBooking/${license}` ,bookingform).subscribe()
         // alert("bookings updated")
+    }
+
+     addComplaint(complaint :Complaints){
+        this.httpClient.post<{'message':string}>("api/addComplaint",complaint).subscribe( {
+            next:(resData) => this.complaintMessages = resData.message
+        }
+
+        )
+        this.complaintNotifications.push(complaint)
+
+    }
+
+    get complaintMessage(){
+        return this.complaintMessages;
+    }
+    get complaintNotification(){
+        return this.complaintNotifications.length;
+    }
+
+
+     getComplaints() : Observable<Complaints[]>{
+        return this.httpClient.get<Complaints[]>("/api/viewComplaints")
+
     }
 
     

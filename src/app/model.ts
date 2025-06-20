@@ -22,6 +22,7 @@ export  interface SignUp {
     carName : string;
     dropOfDate :string;
     pickUpDate : string;
+     
     // cancelStatus:string;
    
     
@@ -59,6 +60,14 @@ export  interface SignUp {
    
 
  } 
+
+ export interface Complaints{
+  name:string;
+  surname:string;
+  phoneNumber: number;
+  message:string;
+ }
+ 
 export interface Cars {
    name:string;
    picture:string;

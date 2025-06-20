@@ -1,1 +1,21 @@
 <p>contact-component works!</p>
+
+
+<button (click)="back()">Back</button>
+
+<form (ngSubmit)="onSubmit()">
+  <label>Name</label>
+  <input name="name" type="text" [(ngModel)]="name"/>
+
+<label>Surname</label>
+  <input name="surname" type="text" [(ngModel)]="surname"/>
+<label>Phone Number</label>
+  <input name="number" type="text" [(ngModel)]="phoneNumber"/>
+  <label>Message</label>
+  <input name="message" type="text" [(ngModel)]="message"/>
+
+  <button>Submit</button>
+@if(click){
+  <h1>{{messages}}</h1>
+}
+</form>

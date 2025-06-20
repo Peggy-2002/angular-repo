@@ -10,12 +10,16 @@
 
     <div id="login"><button (click)="login()" id="logins">Login</button></div>
     <div id="sign-up"  (click)="createAcount()"><button id="signs-up">Sign-up</button></div>
-    <!-- <div id="reservations"  (click)="reservations()"><button>Reservations</button></div> -->
-    <div class="buttonOne"  id="reservations"  (click)="reservations()"><label>Reservations</label></div>
-    <!-- <button id="vehicles" (click)="vehicles()">Vehicles</button> -->
-    <label  id="vehicles" (click)="vehicles()">Vehicles</label>
-    <!-- <button id="contact" (click)="contactUs()">Contact us</button> -->
-    <label id="contact" (click)="contactUs()">Contact us</label>
+    <div id="reservations"  (click)="reservations()"><button>Reservations</button></div>
+    <button id="vehicles" (click)="vehicles()">Vehicles</button>
+    <button id="contact" (click)="contactUs()">Contact us</button>
+    <input id="pickUpDate" type="date" placeholder="Pick-Up-Date" [(ngModel)]="pickUpdate"/>
+    <input  id="dropOfDate" type="date" placeholder="Drop-Of-Date" [(ngModel)]="dropOfdate"/>
+    <button id="vehicle" (click)="vehicle()">FindMyVehicle</button>
+    @if(click){
+<h1>{{message}}</h1>
+    }
+    
 </body>
     
 <router-outlet></router-outlet> 
