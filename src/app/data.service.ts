@@ -214,6 +214,7 @@ login(log : Login){
 
     editBooking(license :number ,bookingform:BookingForm){
         this.httpClient.put(`/api/editBooking/${license}` ,bookingform).subscribe()
+        // alert("bookings updated")
     }
 
     

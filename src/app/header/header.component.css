@@ -65,4 +65,12 @@ padding: 8px 16px;
 
     
 }
+.buttonOne:hover{
+    font-size: x-large;
+    font-family :Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+  /* background-image:linear-gradient(#b1e0c9, rgb(125, 155, 153)) ; */
+  /* color: #ccc; */
+}
+
 

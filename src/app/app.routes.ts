@@ -29,6 +29,7 @@ import { UpdateCarComponentComponent } from './manager/update-car-component/upda
 import { ViewBookingsComponentComponent } from './manager/view-bookings-component/view-bookings-component.component';
 import { BookingsDetailsComponentComponent } from './manager/bookings-details-component/bookings-details-component.component';
 
+
 export const routes: Routes = [
 {
     path:"",
@@ -204,6 +205,7 @@ export const routes: Routes = [
                             {
                                 path:'update',
                                 component:UpdateComponentComponent
+                                
                             }
                         ]
                      },
@@ -221,6 +223,10 @@ export const routes: Routes = [
              }
 
     ];
+
+
+   
+
 
     
    

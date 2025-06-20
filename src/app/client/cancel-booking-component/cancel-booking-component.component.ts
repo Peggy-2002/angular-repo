@@ -28,8 +28,7 @@ export class CancelBookingComponentComponent {
   }
 
   deleteBooking(){
-    // console.log('deleted clicked')
-    // console.log(this.license)
+    
     this.dataService.deleteBooking({
       name :this.getBooking.name,
       surname: this.getBooking.surname,

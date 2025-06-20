@@ -1,39 +1,102 @@
-<p>update-component works!</p>
+
+
+
+
+
+<div class="box">
+        <h2>finding-bookings</h2>
+        <p>
+        <input class="input" [(ngModel)]="license" type="text" placeholder="Enter drivers-licence" />
+        </p>
+        <p> 
+         <button   class=dropdown-button  (click)="findBookingByDriversLicence()">find Booking</button>
+         </p>
+         <div >
+
+             <form class="placeholder" (ngSubmit)="submitBooking()">
+
+    
+ 
+    <p>
+     <input type="text"  name ="name"  [placeholder]="getBooking.name"  required [(ngModel)]="name" />
+     </p> 
+     <p>
+     <input type="text"  name ="surname" [placeholder]="getBooking.surname"  required  [(ngModel)]="surname" />
+     </p>
+     <p>
+     <input type="text"  name ="email"  [placeholder]="getBooking.email"  required [(ngModel)]="emal" />
+     </p>
+
+      <p>
+        <input type="text"  name ="carName"  [placeholder]="getBooking.carName"  required [(ngModel)]="carName" />
+     </p>           
+     <p>
+     <input type="txt"  name ="startData" [placeholder]="getBooking.pickUpDate" required  [(ngModel)]="pickUpDate" />
+     </p>
+     <p>
+     <input type="txt"  name ="end-date" [placeholder]="getBooking.dropOfDate" required [(ngModel)]="dropOfDate"  />
+     </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
 
 <div>
     <form  class="box" (ngSubmit)="submitBooking()">
        
         <h2>update-bookings</h2> 
-      <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
+     <p>
+        <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
+     </p>
+     <p>
+         <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+     </p>
 
-     <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+    <p>
+         <input type="text"  name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />
+     </p>
 
-     <input type="text"  name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />
+     <P>
+         <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" emal" />
+     </P>
 
-     <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" emal" />
+     <p>
 
      <input type="drivers-licence"  name ="drivers-licence" placeholder="Drivers-licence" required [(ngModel)]="license"  />
+     </p>
 
      <!-- <input type="number"  name ="booking-payment" placeholder="Booking-payment" required [(ngModel)]="bookingPayment" /> -->
+      <p>
 
-    <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
+    <input type="date"  name ="startDate" placeholder="pickUpDate" required   [(ngModel)]="pickUpDate" />
+    </p>
+    <p>
 
     <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/>
+    </p>
 
-    
+    <div>
         <button   class ="dropdown-button" type="submit">save</button> 
+    </div>
+    
+        
 
     </form>
 
 
-    <div>
-         <tr>
-                    <!-- <td>{{"clientName:" + " " + bookng }}</td> -->
-                     <!-- <td>{{"surname:" +  " "+booking.surname }}</td>
-                     <td>{{"email:" + " " +booking.email}}</td>
-                     <td>{{ "startData:" + " " + booking.startDate}},  {{ "endDate:" +  " " + booking.endDate}}</td>  
-                     <td>{{"carName:" + booking.carName}}</td> -->
-                </tr>
-               
-    </div>
+   
+    
 </div>

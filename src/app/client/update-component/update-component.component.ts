@@ -18,6 +18,16 @@ export class UpdateComponentComponent {
   license = ''
   pickUpDate = ''
   dropOfDate =''
+
+
+  findBookingByDriversLicence(){
+    this.dataService.findBookingByDriversLicense(+this.license)
+
+  }
+
+  get getBooking(){
+    return this.dataService.bookingform;
+  }
   
 
   submitBooking(){
