@@ -10,15 +10,18 @@ import { Router, RouterOutlet } from '@angular/router';
 export class ReservationsComponentComponent {
   router = inject(Router)
 
+  // bookingform(){
+  //   this.router.navigate(["/reservations/booking"])
+  // }
   bookingform(){
-    this.router.navigate(["/reservations/booking"])
+    this.router.navigate(["/booking"])
   }
   cancelBooking(){
-    this.router.navigate(["reservations/cancel"])
+    this.router.navigate(["/cancel"])
 
   }
  update(){
-    this.router.navigate(["reservations/update"])
+    this.router.navigate(["/update"])
 
   }
 
