@@ -2,7 +2,7 @@ import { inject, Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BookingForm, Complaints, SignUp } from "./model";
 import { Role ,Form} from "./model";
-import { Login ,Car ,Name,Cars } from "./model";
+import { Login ,Car ,Name,Cars,Booking } from "./model";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 
@@ -30,7 +30,7 @@ export class DataService {
     bookings :BookingForm[]=[];
     forms:Form[]=[];
     car!:Cars
-    bookingform!: BookingForm;
+    bookingform!: Booking;
     complaintNotifications :Complaints[]=[];
     
      
@@ -194,13 +194,22 @@ login(log : Login){
 
     }
 
-    findBookingByDriversLicense(license: number){
-        this.httpClient.get<BookingForm>(`/api/bookings/${license}`).subscribe(response => {
+    // findBookingByDriversLicense(license: number){
+    //     this.httpClient.get<BookingForm>(`/api/bookings/${license}`).subscribe(response => {
+    //         this.bookingform =response;
+
+    //     })
+
+    // }
+findBookingByDriversLicense(license: number){
+        this.httpClient.get<Booking>(`/api/bookings/${license}`).subscribe(response => {
             this.bookingform =response;
 
         })
 
     }
+
+
 
     getBooking(){
         return this.httpClient.get("/api/bookings")
@@ -215,6 +224,18 @@ login(log : Login){
         )
 
     }
+ returnCar(bookingform :Booking){
+        // this.bookingform.cancelStatus="booking deleted"
+        this.httpClient.patch<{'message':string}>("api/returnCar",bookingform).subscribe( {
+            next:(resData) => console.log(resData)
+        }
+
+        )
+
+    }
+
+
+
     getBookingss(){
         return this.bookingform
 

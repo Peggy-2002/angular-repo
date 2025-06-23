@@ -27,6 +27,26 @@ export  interface SignUp {
    
     
    }
+export  interface Booking{
+    name : string;
+    surname : string;
+    email : string;
+    license : string;
+    carName : string;
+    dropOfDate :string;
+    pickUpDate : string;
+    returned:string;
+    condition:string;
+    time:string;
+    damagedFee:number;
+    delayedFee:number;
+    
+   
+    
+   }
+
+
+   
 
 
    export  interface Form {

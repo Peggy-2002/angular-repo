@@ -52,22 +52,22 @@ export const routes: Routes = [
         path:'reservations',
         component:ReservationsComponentComponent,
         children:[
-              {
-                path:'booking',
-                component:BookingFormComponentComponent
-              },
-              {
+            //   {
+            //     path:'booking',
+            //     component:BookingFormComponentComponent
+            //   },
+            //   {
                  
-                 path:'cancel',
-                 component:CancelBookingComponentComponent 
+            //      path:'cancel',
+            //      component:CancelBookingComponentComponent 
                                 
-              },
+            //   },
 
-              {
-                path:'update',
-                component:UpdateComponentComponent
+            //   {
+            //     path:'update',
+            //     component:UpdateComponentComponent
 
-              }
+            //   }
            ]
         },
         // {
@@ -229,7 +229,13 @@ export const routes: Routes = [
 
                      {
                         path:'viewbooking',
-                        component:ViewBookingsComponentComponent
+                        component:ViewBookingsComponentComponent,
+                        children:[
+                            {
+                                 path:':names/bookingsdetails',
+                                 component:BookingsDetailsComponentComponent
+                            }
+                        ]
                      }
                  ]
              },
@@ -254,7 +260,24 @@ export const routes: Routes = [
         {
             path:'vehicle',
             component:VehicleComponentComponent
-        }
+        },
+         {
+                path:'booking',
+                component:BookingFormComponentComponent
+              },
+
+               {
+                 
+                 path:'cancel',
+                 component:CancelBookingComponentComponent 
+                                
+              },
+
+              {
+                path:'update',
+                component:UpdateComponentComponent
+
+              }
 
     ];
 
