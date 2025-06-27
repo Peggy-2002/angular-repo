@@ -55,12 +55,9 @@
 
                          <input type="drivers-licence"  name ="drivers-licence" placeholder="Drivers-licence" required [(ngModel)]="license"  />
                          </p>
-<!-- 
-                          <p>
-                        <input type="text"  name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />
-                        </p> -->
+
                          <p>
-                        <select id="car-name"  name="car-name"  required [(ngModel)]="carName">
+                        <select id="car-name"  name="car-name"   [(ngModel)]="carName">
                        <option disabled selected hidden value="">car-name</option>
 
                        @for(car of carNames; track car.name){
@@ -69,9 +66,9 @@
                          <option  [value]="car.name">{{car.name}}</option>
                           }
                          </select><br />
-                          </p>
+                          
      
-                          <p>
+                        </p>
 
      
                           <p>
@@ -83,6 +80,7 @@
 
                          <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/>
                             </p>
+
                             @if(dropOfDate < pickUpDate){
                                  <h4>Please enter valid dates</h4>
                              }

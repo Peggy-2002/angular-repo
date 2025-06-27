@@ -308,9 +308,11 @@ getBookingByDriversLicense(license: number){
     }
 
     editBooking(license :number ,bookingform:BookingForm){
+        console.log(license,bookingform)
         this.httpClient.put<{'message':string}>(`/api/editBooking/${license}` ,bookingform).subscribe({
             next:(resData) => this.updateMessage = resData.message
         })
+
         
     }
 

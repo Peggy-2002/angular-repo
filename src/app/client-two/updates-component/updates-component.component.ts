@@ -14,13 +14,13 @@ export class UpdatesComponentComponent {
 
 constructor(private dataService:DataService){
   }
-  name= ''
-  surname = ''
-  carName = ''
-  email = ''
-  license = ''
-  pickUpDate = ''
-  dropOfDate =''
+  name='';
+  surname ='';
+  carName = '';
+  email = '';
+  license = '';
+  pickUpDate = '';
+  dropOfDate ='';
 
 carNames:Car[]=[];
 
@@ -45,7 +45,7 @@ ngOnInit(): void {
       
        
     }
-    console.log(this.booking)
+    
     
       }
       
@@ -97,10 +97,11 @@ this.dataService.getCars().subscribe({
       license :this.license,
       pickUpDate :this.pickUpDate,
       dropOfDate : this.dropOfDate,
-      carName :this.carName
+      carName :this.bookings.carName
   })
 
   }
+  console.log(this.name, this.surname,this.email,this.license,this.pickUpDate,this.dropOfDate)
 }
 
 
