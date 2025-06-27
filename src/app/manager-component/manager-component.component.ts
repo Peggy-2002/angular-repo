@@ -25,7 +25,7 @@ export class ManagerComponentComponent {
     this.router.navigate(["/"]);
   }
    vehicles(){
-    this.router.navigate(["/manager/car"]);
+    this.router.navigate(["/car"]);
   }
   remove(){
     this.router.navigate(["/manager/remove"])

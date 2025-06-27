@@ -1,10 +1,11 @@
 import { inject, Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BookingForm, Complaints, SignUp } from "./model";
-import { Role ,Form} from "./model";
-import { Login ,Car ,Name,Cars,Booking } from "./model";
+import { Role ,Form,Forms} from "./model";
+import { Login ,Car ,Bookings,Cars,Booking ,ViewBookings} from "./model";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+
 
 
 @Injectable({providedIn:"root"}) 
@@ -25,12 +26,18 @@ export class DataService {
     deleteCarMessage='';
     updateMessage='';
     complaintMessages='';
+    cancelMessage='';
+    returnCarMessage='';
 
 
-    bookings :BookingForm[]=[];
+
+    bookings:BookingForm[]=[];
+
+    clientBooking!:BookingForm;
     forms:Form[]=[];
     car!:Cars
-    bookingform!: Booking;
+    bookingform!: Bookings;
+    bookingforms!: Booking;
     complaintNotifications :Complaints[]=[];
     
      
@@ -81,6 +88,10 @@ login(log : Login){
         return this.role.id;
         
        
+    }
+
+    get userName(): string {
+        return this.role.name
     }
 
      cars(cars:Car){
@@ -145,17 +156,25 @@ login(log : Login){
 
 
     booking(booking :BookingForm){
-        console.log(booking)
         
+        console.log(booking)
 
         this.httpClient.post<{'message':string}>("/api/booking",booking).subscribe({
-            next:(resData) => this.bookingMessage = resData.message
+            next:(resData) => {this.bookingMessage = resData.message
+                console.log(this.bookingMessage)
+            }
+            
         });
-    
+     
         this.bookings.push(booking)
         
-        console.log(this.bookings)
+        
+       
 
+    }
+
+    get message(){
+    return this.bookingMessage;
     }
 
    
@@ -189,21 +208,23 @@ login(log : Login){
 
     }
 
-    getBookings() : Observable<Form[]>{
-        return this.httpClient.get<Form[]>("/api/viewbookings")
+    getBookings() : Observable<Forms[]>{
+        
+        return this.httpClient.get<Forms[]>("/api/viewbookings")
+
+    }
+     getBooking() : Observable<ViewBookings[]>{
+        return this.httpClient.get<ViewBookings[]>("/api/viewbookings")
 
     }
 
-    // findBookingByDriversLicense(license: number){
-    //     this.httpClient.get<BookingForm>(`/api/bookings/${license}`).subscribe(response => {
-    //         this.bookingform =response;
+    getbookings() : Observable<Booking[]>{
+        return this.httpClient.get<Booking[]>("/api/viewbookings")
 
-    //     })
-
-    // }
-findBookingByDriversLicense(license: number){
+    }
+     bookingByDriversLicense(license: number){
         this.httpClient.get<Booking>(`/api/bookings/${license}`).subscribe(response => {
-            this.bookingform =response;
+            this.bookingforms =response;
 
         })
 
@@ -211,27 +232,72 @@ findBookingByDriversLicense(license: number){
 
 
 
-    getBooking(){
-        return this.httpClient.get("/api/bookings")
+
+    findBookingByDriversLicense(license: number){
+        this.httpClient.get<Bookings>(`/api/bookings/${license}`).subscribe(response => {
+            this.bookingform =response;
+
+        })
+
     }
 
-    deleteBooking(bookingform :BookingForm){
-        // this.bookingform.cancelStatus="booking deleted"
+    get bookingss(){
+        return this.bookingform
+    }
+
+getBookingByDriversLicense(license: number){
+        this.httpClient.get<BookingForm>(`/api/bookings/${license}`).subscribe(response => {
+            this.clientBooking =response;
+            
+            
+
+        })
+
+    }
+
+    get clients(){
+        return this.clientBooking
+    }
+
+
+
+    // getBooking(){
+    //     return this.httpClient.get("/api/bookings")
+    // }
+
+    deleteBooking(bookingform :Bookings){
+        
         this.httpClient.post<{'message':string}>("api/update-bookings",bookingform).subscribe( {
-            next:(resData) => console.log(resData)
+            next:(resData) => {this.cancelMessage = resData.message
+                console.log(this.cancelMessage)
+
+            }
         }
 
         )
 
     }
+
+    get cancelMessages(){
+        return this.cancelMessage
+    }
+
+    
  returnCar(bookingform :Booking){
-        // this.bookingform.cancelStatus="booking deleted"
+    console.log(bookingform)
+        
         this.httpClient.patch<{'message':string}>("api/returnCar",bookingform).subscribe( {
-            next:(resData) => console.log(resData)
+            next:(resData) => {this.returnCarMessage =resData.message
+             console.log(this.returnCarMessage)
+            }
         }
 
         )
 
+    }
+
+    get carMessages(){
+        return this.returnCarMessage
     }
 
 
@@ -242,8 +308,14 @@ findBookingByDriversLicense(license: number){
     }
 
     editBooking(license :number ,bookingform:BookingForm){
-        this.httpClient.put(`/api/editBooking/${license}` ,bookingform).subscribe()
-        // alert("bookings updated")
+        this.httpClient.put<{'message':string}>(`/api/editBooking/${license}` ,bookingform).subscribe({
+            next:(resData) => this.updateMessage = resData.message
+        })
+        
+    }
+
+    get updatesMessage(){
+        return this.updateMessage
     }
 
      addComplaint(complaint :Complaints){

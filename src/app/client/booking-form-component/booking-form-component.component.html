@@ -7,7 +7,7 @@
      <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
 
      <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
-      <!-- <input type="text" id="cars" name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />    -->
+      
        
         <select id="car-name"  value="Cars" name="car-name" [(ngModel)]="carName">
              @for(car of carNames; track car.name){
@@ -28,6 +28,8 @@
 
     
         <button  >Book</button>
-
+    
 </form>
      </div>
+
+     <h3>{{message}}</h3>

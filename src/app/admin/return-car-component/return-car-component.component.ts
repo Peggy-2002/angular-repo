@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
+import { BookingForm } from '../../model';
 
 @Component({
   selector: 'app-return-car-component',
@@ -8,32 +9,83 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './return-car-component.component.html',
   styleUrl: './return-car-component.component.css'
 })
-export class ReturnCarComponentComponent {
-
+export class ReturnCarComponentComponent implements OnInit{
+click=false;
+booking :BookingForm[] =[]
   constructor(private dataService :DataService){
 
   }
-  name =''
-  surname =''
-  emal =''
-  pick_up_date =''
-  drop_of_date= ''
-  carName=''
-  condition=''
-  returning=''
+
+  
+
+  
+  name ='';
+  surname ='';
+  email ='';
+  pick_up_date ='';
+  drop_of_date= '';
+  carName='';
+  condition='';
   time=''
-  delayedFee=''
-  damagedFee=''
-  license =''
+  delayedFee='';
+  damagedFee='';
+  license ='';
+numbers:string[]=[];
+finds =''
+
+
 
    findBookingByDriversLicence(){
-    this.dataService.findBookingByDriversLicense(+this.license)
+    
+       this.dataService.bookingByDriversLicense(+this.license)
+      
+    
+    const find = this.numbers.find((code) => code == this.license)!
+     
+     this.finds = find
+     
+   
+  }
 
+  get messages():string{
+    return this.finds
+
+  }
+    
+   
+
+  
+
+
+
+  ngOnInit(): void {
+    this.dataService.getbookings().subscribe({
+      next :(resData) =>{ this.booking = resData
+       console.log(this.booking)
+       for(let i = 0; i<resData.length;i++){
+          
+          this.numbers.push(resData[i].license)
+
+          }
+          console.log(this.numbers)
+        }
+      
+
+    });
+this.dataService.getCars().subscribe({
+              next: (resData) => {
+                console.log(resData)
+              }
+              
+                
+            });
+
+
+   
   }
 
  returnCar(){
-    // console.log('deleted clicked')
-    // console.log(this.license)
+    
     this.dataService.returnCar({
       name :this.getBooking.name,
       surname: this.getBooking.surname,
@@ -44,17 +96,21 @@ export class ReturnCarComponentComponent {
       carName:this.getBooking.carName,
       condition:this.condition,
       time:this.time,
-      returned:this.returning,
       delayedFee:+this.delayedFee,
-      damagedFee:+this.damagedFee
+      damagedFee:+this.damagedFee,
 
 
 
     });
+   
 
   }
 
 get getBooking(){
-    return this.dataService.bookingform;
+    return this.dataService.bookingforms;
+  }
+
+  get message(){
+    return this.dataService.carMessages
   }
 }

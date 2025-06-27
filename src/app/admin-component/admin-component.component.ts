@@ -9,22 +9,32 @@ import { Router, RouterOutlet } from '@angular/router';
   styleUrl: './admin-component.component.css'
 })
 export class AdminComponentComponent {
-   click = true;
+  click = false;
   router = inject(Router)
+  clicks = false;
+  clicking=false;
+  clicked =false;
+  clickedOn =false;
+
+ 
 
   constructor(private dataService : DataService){
 
   }
 
   get notifications(){
+    
+    
     return this.dataService.notification
+    
     
   }
   
 
   onClick(){
+    
       this.router.navigate(["/admin/viewIncomingBookings"])
-      this.click = false;
+      this.click =true;
 
     }
 
@@ -32,14 +42,15 @@ export class AdminComponentComponent {
     this.router.navigate(["/"]);
   }
 
-  remove(){
-     this.click = true;
-     this.dataService.bookings = [];
-    this.dataService.forms =[];
+  // remove(){
+  //    this.click = false;
+  //    this.dataService.bookings = [];
+  //   this.dataService.forms =[];
     
-  }
+  // }
 
   onClicks(){
+    this.clicks = true;
       this.router.navigate(["/admin/reservations"])
       
 
@@ -47,11 +58,14 @@ export class AdminComponentComponent {
 
     return(){
       this.router.navigate(["/admin/return"])
+      this.clickedOn =true;
     }
 
 
 viewbookings(){
       this.router.navigate(["/admin/viewbooking"])
+      this.clicked=true;
+
     }
 
     get complaintsNotification(){
@@ -60,5 +74,11 @@ viewbookings(){
 
     viewComplaints(){
       this.router.navigate(["/admin/viewComplaints"])
+      this.clicking =true;
     }
+
+    // removes(){
+    //   this.clicking =false;
+    //   this.dataService.complaintNotifications = [];
+    // }
 }

@@ -1,40 +1,126 @@
-<p>return-car-component works!</p>
-<div>
+
+      <div class="box"> 
 
 
-      <div class="booking-details">
-        <h2>finding-bookings</h2>
+      <div class="booking-details" >
+        
+        <h2>finding-booking</h2>
 
-        <input class="input" [(ngModel)]="license" type="text" placeholder="Enter drivers-licence" /> 
-         <button class="button" (click)="findBookingByDriversLicence()">find Booking</button>
-         <div >
+        <p>
+        <input class="input" [(ngModel)]="license" type="text" placeholder="Enter booking-code" />
+
+        </p>
+       
+        <p> 
+         <button   class=dropdown-button  (click)="findBookingByDriversLicence()">Find Booking</button>
+         @if(messages == undefined){
+          <h3>Invalid booking code</h3>
+
+         }
+         </p>
+
+         
+        
+      <div >
             
+      @if(messages){          
+
+     <form class="placeholder" (ngSubmit)="returnCar()"#f="ngForm">
+     <p>
+      <label>Name</label>
+     <input type="text"  name ="name"  [placeholder]="getBooking.name"   [(ngModel)]="name" />
+     </p>
+
+     <p>
+      <label>Surname</label>
+     <input type="text"  name ="surname" [placeholder]="getBooking.surname"    [(ngModel)]="surname" />
+     </p>
+
+     <p>
+      <label>Email</label>
+     <input type="text"  name ="email"  [placeholder]="getBooking.email"   [(ngModel)]="email" />
+     </p>
+
+     <p>
+      <label>License</label>
+     <input type="text"  name ="email"  [placeholder]="getBooking.license"   [(ngModel)]="license" />
+     </p>
+ 
+     <p>
+      <label>Car-Name</label>
+     <input type="text"  name ="name"  [placeholder]="getBooking.carName"   [(ngModel)]="carName" />
+     </p>
+     
+     
+<p>
+     <label>Delayed</label>
+      <select id="car-name"  value="Delayed ?" name="Delayed?" [(ngModel)]="time">
+             
+                    <option >No</option>
+                    <option >Yes</option>
                 
+            </select><br />
+</p>
+     @if(time === "Yes"){
+      <p>
+      <label>Delayed Fee</label>
+      <input type="number"  name ="delayedFee"  required [(ngModel)]="delayedFee"  />
+      </p>
+     }
+     
 
-         <form class="placeholder" (ngSubmit)="returnCar()">
-      <input type="text"  name ="name"  [placeholder]="getBooking.name"  required [(ngModel)]="name" /> 
+<p>
+      <label>In Good Condition</label>
+     <select id="car-name"  value="Condition ?" name="In Good condition ?" [(ngModel)]="condition">
+             
+                    <option >No</option>
+                    <option >Yes</option>
+                
+            </select><br />
+</p>
 
-     <input type="text"  name ="surname" [placeholder]="getBooking.condition"  required  [(ngModel)]="condition" />
+     @if( condition === "No"){
+      <p>
+       <label>Damaged Fee</label>
+      <input type="number"  name ="damagedFee" required [(ngModel)]="damagedFee" />
+     
+      </p>
+     }
+     
+     
 
-     <input type="text"  name ="name"  [placeholder]="getBooking.returned"  required [(ngModel)]="returning" /> 
 
-     <input type="text"  name ="surname" [placeholder]="getBooking.time"  required  [(ngModel)]="time" />
 
-     <input type="text"  name ="name"  [placeholder]="getBooking.carName"  required [(ngModel)]="carName" /> 
+     
+     <p>
+      <label>Pick-Up-Date</label>
+     <input type="txt"  name ="startData" [placeholder]="getBooking.pickUpDate"   [(ngModel)]="pick_up_date" />
+     </p>
 
-     <input type="text"  name ="surname" [placeholder]="getBooking.surname"  required  [(ngModel)]="surname" />
+     
+     <p>
+     <label>Drop-Of-Date</label> 
+     <input type="txt"  name ="end-date" [placeholder]="getBooking.dropOfDate"  [(ngModel)]="drop_of_date"  />
+     </p>
 
-     <input type="text"  name ="email"  [placeholder]="getBooking.email"  required [(ngModel)]="emal" />
+     
 
-     <input type="txt"  name ="startData" [placeholder]="getBooking.pickUpDate" required  [(ngModel)]="pick_up_date" />
+    <button class="dropdown-button"[disabled]="!f.valid" data="disabled" >Return-Car</button>
 
-     <input type="txt"  name ="end-date" [placeholder]="getBooking.dropOfDate" required [(ngModel)]="drop_of_date"  />
+    
 
-      <input type="txt"  name ="damagedFee" [placeholder]="getBooking.pickUpDate" required  [(ngModel)]="damagedFee" />
+    <h3>{{message}}</h3>
 
-     <input type="txt"  name ="delayedFee" [placeholder]="getBooking.dropOfDate" required [(ngModel)]="delayedFee"  />
+     </form>
+      }
+      </div>
 
-     <!-- <input type="txt"  name ="booking-payment" [placeholder]="getBooking." required [(ngModel)]="payment" /> -->
+ 
+
+
+      
+
+     
 
     
 
@@ -49,11 +135,8 @@
   
 
 
-    <!-- <input type="text" name ="name" placeholder="driversLicence"  [(ngModel)]="license" />  -->
-    <button class="button2" >Return_Car</button>
 
- </form>
-
+   
 
  
 

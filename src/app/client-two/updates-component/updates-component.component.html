@@ -1,61 +1,33 @@
-
-
-
-
-
+<p>updates-component works!</p>
 <div class="box">
-    <form class="placeholder" (ngSubmit)="submitBooking()">
-        <h2>finding-bookings</h2>
-        <p>
-        <input name="license" class="input" [(ngModel)]="license" type="text" placeholder="Enter drivers-licence" />
-        </p>
-      
-     
-       @if(license && license.length != 6){
-               <h4>License must be exactly 6 characters long.</h4>
-          }
-
-
-        <p> 
-         <button   class=dropdown-button  (click)="findBookingByDriversLicence()">find Booking</button>
-
-         </p>
-         @if(messages == undefined){
-          <h3>Invalid booking code</h3>
-
-         }
-         
-
-
-           </form>
-
-    @if(messages){
+    
+   
                  <p>
-                <input type="text"  name ="name"  [placeholder]="getBooking.name"  required [(ngModel)]="name" />
+                <input type="text"  name ="name"  [placeholder]="bookings.name"  required [(ngModel)]="name" />
                  </p> 
 
                 <p>
-                   <input type="text"  name ="surname" [placeholder]="getBooking.surname"  required  [(ngModel)]="surname" />
+                   <input type="text"  name ="surname" [placeholder]="bookings.surname"  required  [(ngModel)]="surname" />
                  </p>
 
                 <p>
-                <input type="text"  name ="email"  [placeholder]="getBooking.email"  required [(ngModel)]="email" />
+                <input type="text"  name ="email"  [placeholder]="bookings.email"  required [(ngModel)]="email" />
                 </p>
 
                  <p>
-                <input type="text"  name ="email"  [placeholder]="getBooking.license"  required [(ngModel)]="license" />
+                <input type="text"  name ="email"  [placeholder]="bookings.license"  required [(ngModel)]="license" />
                 </p>
 
                 <p>
-                <input type="text"  name ="carName"  [placeholder]="getBooking.carName"  [(ngModel)]="carName" />
+                <input type="text"  name ="carName"  [placeholder]="bookings.carName"  required [(ngModel)]="carName" />
                  </p> 
 
                 <p>
-                <input type="txt"  name ="startData" [placeholder]="getBooking.pickUpDate" required  [(ngModel)]="pickUpDate" />
+                <input type="txt"  name ="startData" [placeholder]="bookings.pickUpDate" required  [(ngModel)]="pickUpDate" />
                 </p>
 
                  <p>
-                 <input type="txt"  name ="end-date" [placeholder]="getBooking.dropOfDate" required [(ngModel)]="dropOfDate"  />
+                 <input type="txt"  name ="end-date" [placeholder]="bookings.dropOfDate" required [(ngModel)]="dropOfDate"  />
                 </p>
                
 
@@ -63,7 +35,7 @@
 
 
            
-                  <form  class="box" (ngSubmit)="submitBooking()">
+                  <form  class="box" (ngSubmit)="submitBooking()" #f="ngForm">
        
                        <h2>update-bookings</h2> 
                          <p>
@@ -83,9 +55,11 @@
 
                          <input type="drivers-licence"  name ="drivers-licence" placeholder="Drivers-licence" required [(ngModel)]="license"  />
                          </p>
-
-                          
-                        <p>
+<!-- 
+                          <p>
+                        <input type="text"  name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />
+                        </p> -->
+                         <p>
                         <select id="car-name"  name="car-name"  required [(ngModel)]="carName">
                        <option disabled selected hidden value="">car-name</option>
 
@@ -99,6 +73,9 @@
      
                           <p>
 
+     
+                          <p>
+
                           <input type="date"  name ="startDate" placeholder="pickUpDate" required   [(ngModel)]="pickUpDate" />
                           </p>
 
@@ -106,18 +83,18 @@
 
                          <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/>
                             </p>
-                        @if(dropOfDate < pickUpDate){
-                           <h1>Please enter valid dates</h1>
+                            @if(dropOfDate < pickUpDate){
+                                 <h4>Please enter valid dates</h4>
                              }
     
-                             <button   class ="dropdown-button" type="submit">save</button>
+                             <button   [disabled]="!f.valid" data="disabled" class ="dropdown-button" type="submit">save</button>
                              
                              
-                             <h4>{{message}}</h4>
+                             <h3>{{message}}</h3>
     
                         
                     </form>
-                }
+                
 </div>
                 
                 

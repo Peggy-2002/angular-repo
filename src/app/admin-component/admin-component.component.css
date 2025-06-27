@@ -1,3 +1,108 @@
-#reservations{
-    margin-left: 354px;
+/* #reservations{
+     margin-left: 354px; 
+    
+/* } */
+ div{
+    background-color: darkblue;
+    height: 70px;
+    
+    
+    
+} 
+#logo{
+    
+/* position: relative;
+bottom: 110px;  */
+transform: translate(20px,30px);
+ color:white;
+font-size: 20px; 
+left: 10px; 
+
+} 
+
+
+ #reservations{
+    transform: translate(552px); 
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    text-decoration:underline;
+    
+
+    
+
 }
+#logOut{
+     transform: translate(1250px); 
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    
+    
+    
+}
+ #logOut.active{
+    text-decoration: underline;
+ } 
+ #return{
+     transform: translate(600px); 
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    text-decoration:underline;
+    
+}
+#returns{
+    transform: translate(660px); 
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    text-decoration:underline;
+    
+}
+#returning{
+     transform: translate(785px); 
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    text-decoration:underline;
+    
+}
+#booking{
+    transform: translate(730px); 
+     border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    text-decoration:underline;
+
+    
+} 
+#remove{
+    transform: translate(405px,400px);
+    width: 200px;
+    margin-top: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#remove:hover {
+    background-color: #0C0950;
+    color: aliceblue;
+}
+
+#router{
+    transform: translate(100px);
+}
+#header {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    font-size: larger;
+    font-weight: bolder;
+}
+ 

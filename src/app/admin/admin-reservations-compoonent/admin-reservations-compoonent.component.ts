@@ -12,16 +12,20 @@ import { Router, RouterOutlet } from '@angular/router';
 export class AdminReservationsCompoonentComponent {
 
   router = inject(Router)
+  click= true;
 
   bookingform(){
+    this.click = false;
     this.router.navigate(["admin/reservations/book"])
   }
   cancelBooking(){
+    this.click = false;
     this.router.navigate(["/admin/reservations/cancels"])
 
   }
 
 update(){
+  this.click = false;
     this.router.navigate(["/admin/reservations/update"])
 
   }

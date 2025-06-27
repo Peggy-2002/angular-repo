@@ -14,10 +14,8 @@ export class BookingComponentComponent {
   constructor(private dataService:DataService){
 
   }
-  carNames:Car[]=[
-      
-  
-    ];
+  carNames:Car[]=[];
+  numbers:string[] =[];
 
   name='';
   surname='';
@@ -26,7 +24,7 @@ export class BookingComponentComponent {
   dropOfDtae='';
   pickUpDate='';
   carName='';
-
+finds='';
 
 
   
@@ -48,17 +46,35 @@ export class BookingComponentComponent {
                 
                 
             });
+  this.dataService.getBookings().subscribe({
+      next :(resData) =>{ 
+        for(let i = 0; i<resData.length;i++){
+          this.numbers.push(resData[i].license)
 
-             
+          }
+          console.log(this.numbers)
+        }
+        
+      
+
+    });
+                  
      
       }
+      get licenses(){
+    return this.numbers
+  }
+
 
 
 
 
 
  onSubmit(){
-
+const find = this.numbers.find((code) => code == this.license)!
+     this.finds = find
+     console.log(find)
+     if(this.finds == undefined){
       this.dataService.form({
      name:this.name,
      surname : this.surname,
@@ -73,7 +89,22 @@ export class BookingComponentComponent {
       
    
  });
+}
+
+
   }
+get message():string{
+    return this.finds
+
+  }
+
+
+  
+get messages(){
+    return this.dataService.bookingMessages
+    
+  }
+
 
    get userId(){
       return this.dataService.userId

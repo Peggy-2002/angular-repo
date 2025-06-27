@@ -30,7 +30,9 @@ import { ViewBookingsComponentComponent } from './manager/view-bookings-componen
 import { BookingsDetailsComponentComponent } from './manager/bookings-details-component/bookings-details-component.component';
 import { ViewComplaintsComponentComponent } from './admin/view-complaints-component/view-complaints-component.component';
 import { ComplaintsDetailsComponentComponent } from './admin/complaints-details-component/complaints-details-component.component';
-import { VehicleComponentComponent } from './client/vehicle-component/vehicle-component.component';
+import { VehicleComponentComponent } from './vehicle-component/vehicle-component.component';
+import { UpdatesComponentComponent } from './client-two/updates-component/updates-component.component';
+import { CancelBookingsComponentComponent } from './client-two/cancel-bookings-component/cancel-bookings-component.component';
 
 
 export const routes: Routes = [
@@ -104,10 +106,10 @@ export const routes: Routes = [
                         component:AddCarComponentComponent
 
                     },
-                    {
-                        path:'car',
-                        component:CarsComponent
-                    },
+                    // {
+                    //     path:'car',
+                    //     component:CarsComponent
+                    // },
 
                     {
                         path:'remove',
@@ -152,12 +154,12 @@ export const routes: Routes = [
 
                                 {
                                     path:'cancel',
-                                    component:CancelBookingComponentComponent
+                                    component:CancelBookingsComponentComponent
                                 },
 
                                 {
                                       path:'update',
-                                      component:UpdateComponentComponent
+                                      component:UpdatesComponentComponent
 
                                 }
                                 
@@ -265,7 +267,7 @@ export const routes: Routes = [
         },
          {
                 path:'booking',
-                component:BookingFormComponentComponent
+                component:AdminBookingComponentComponent
               },
 
                {
@@ -279,7 +281,11 @@ export const routes: Routes = [
                 path:'update',
                 component:UpdateComponentComponent
 
-              }
+              },
+              {
+                        path:'car',
+                        component:CarsComponent
+                    },
 
     ];
 

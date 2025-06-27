@@ -7,6 +7,7 @@ export  interface SignUp {
     export interface Role {
     id : number;
     message : string;
+    name: string;
  }
 
  export interface Login {
@@ -23,10 +24,28 @@ export  interface SignUp {
     dropOfDate :string;
     pickUpDate : string;
      
-    // cancelStatus:string;
+    
    
     
    }
+
+export  interface Bookings {
+    name : string;
+    surname : string;
+    email : string;
+    license : string;
+    carName : string;
+    dropOfDate :string;
+    pickUpDate : string;
+    cancellationFee:number;
+    
+   }
+
+
+
+
+
+   
 export  interface Booking{
     name : string;
     surname : string;
@@ -35,7 +54,6 @@ export  interface Booking{
     carName : string;
     dropOfDate :string;
     pickUpDate : string;
-    returned:string;
     condition:string;
     time:string;
     damagedFee:number;
@@ -43,6 +61,24 @@ export  interface Booking{
     
    
     
+   }
+
+   export interface ViewBookings {
+   name : string;
+    surname : string;
+    email : string;
+    license : string;
+    carName : string;
+    dropOfDate :string;
+    pickUpDate : string;
+    condition:string;
+    time:string;
+    damagedFee:number;
+    delayedFee:number;
+    cancellationFee:number;
+    status:string;
+    returned:string;
+
    }
 
 
@@ -63,6 +99,36 @@ export  interface Booking{
    
     
    }
+export  interface Forms {
+    name : string;
+    surname : string;
+    email : string;
+    license : string;
+    carName : string;
+    dropOfDate :string;
+    pickUpDate : string;
+    condition:string;
+    time:string;
+    damagedFee:number;
+    delayedFee:number;
+    cancellationFee:number;
+    status:string;
+    returned:string; 
+    signUp:{
+      id : number;
+      name : string;
+    surname : string;
+    email : string;
+    password : string;
+    }
+   
+    
+   }
+
+
+
+
+
 
    export interface Name{
     name:string;

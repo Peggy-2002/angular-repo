@@ -1,9 +1,18 @@
 @if (click) {
-    <h4>{{bookings.name}}</h4>
-    <h4>{{bookings.surname}}</h4>
-    <h4>{{bookings.carName}}</h4>
-    <h4>{{bookings.pickUpDate}}</h4>
-    <h4>{{bookings.dropOfDate}}</h4>
-    <h4>{{bookings.email}}</h4>
-    <h4>{{bookings.license}}</h4>
+    <div>
+    <h4>Name: {{bookings.name}}</h4>
+    <h4>Surname: {{bookings.surname}}</h4>
+    <h4>Email: {{bookings.email}}</h4>
+    <h4>License: {{bookings.license}}</h4>
+    <h4>Car-Name: {{bookings.carName}}</h4>
+    <h4>Pick-Up-Date: {{bookings.pickUpDate}}</h4>
+    <h4>Drop-Of-Date: {{bookings.dropOfDate}}</h4>
+    <h4>Returned: {{bookings.returned}}</h4>
+    <h4>Cancelled: {{bookings.status}}</h4>
+    <h4>Car-Condition: {{bookings.condition}}</h4>
+    <h4>Delayed: {{bookings.time}}</h4>
+    <h4>Cancellation-Fee: {{bookings.cancellationFee}}</h4>
+    <h4>Delayed-Fee: {{bookings.delayedFee}}</h4>
+    
+    </div>
 }
