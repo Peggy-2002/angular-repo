@@ -1,33 +1,54 @@
-
 <div>
 
 
- <form (ngSubmit)="onSubmit()">
+ <form (ngSubmit)="onSubmit()" #f="ngForm">
         <h2>Booking a Car</h2> 
      <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
 
      <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
-      <!-- <input type="text" id="cars" name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />    -->
+      
        
-        <select id="car-name"  value="Cars" name="car-name" [(ngModel)]="carName">
+        <select id="car-name"  name="car-name"  required [(ngModel)]="carName">
+          <option disabled selected hidden value="">car-name</option>
+
              @for(car of carNames; track car.name){
      
                     <h1>{{car.name}}</h1>
-                    <option [value]="car.name">{{car.name}}</option>
+                    <option  [value]="car.name">{{car.name}}</option>
                 }
             </select><br />
             
 
      <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />
+     
+     @if(email && !email.toLowerCase().endsWith("@gmail.com")){
+          <h4>Invalid email</h4>
 
-     <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license" required [(ngModel)]="license"  />
+     }
+
+
+     <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license"      [(ngModel)]="license"  />
+
+    @if(message){
+          <h3>Booking code already in use</h3>
+
+         }
+         
+       @if(license && license.length != 6){
+               <h4>License must be exactly 6 characters long.</h4>
+          }
+
 
     <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
 
     <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDtae"/> 
+     @if(dropOfDtae < pickUpDate){
+     <h1>Please enter valid dates</h1>
+    }
 
-    
-        <button  >Book</button>
+     
+         <button [disabled]="!f.valid" data="disabled" >Submit</button>  
+         <h3>{{messages}}</h3>
 
 </form>
      </div>

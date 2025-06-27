@@ -1,9 +1,15 @@
-
+<div id="box">
 @for(booking of bookings ;track booking.carName){
-    <div class="view">
-        <button id="button" [routerLink]="[booking.name,'bookingsdetails']"  >{{booking.name}}</button> 
+    <div>
+        <button id="bookings"(click)="clicks()" [routerLink]="[booking.name,'bookingsdetails']"  >{{booking.name}}</button> 
     </div>
      
   } 
+  </div>
+  
+@if(click){
 
-<router-outlet></router-outlet> 
+   <router-outlet></router-outlet>
+   <button id="remove" (click) ="remove()">remove</button>
+}
+

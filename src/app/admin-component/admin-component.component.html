@@ -1,29 +1,45 @@
-<p>admin-component works!</p>
 
 
-<h1>{{notifications}}</h1>
+<div>
+<h1 id="logo">Car rental service</h1>
+<button id="reservations" (click)="onClicks()">Reservations</button>
+
+<button id="return" (click)="return()">Return car</button>
+
+<button id="returns" (click)="viewbookings()">View Bookings</button>
+
+<button id="booking" (click)="onClick()" >View Incoming Bookings {{notifications}}</button>
+ 
+<button id="returning"(click)="viewComplaints()" >View Complaints {{complaintsNotification}}</button>
+
+<button id="logOut" (click)="logOut()">Log out</button>
+</div>
+
 
 @if(click){
-<button (click)="onClick()" >View bookings</button>
+    <h1 id="header">Incoming Bookings</h1>
+   <router-outlet ></router-outlet>
+   
+} 
 
-}@else{
-<button (click) ="remove()">remove</button>
+@if(clicks){
+    
+ <router-outlet></router-outlet>  
+} 
+
+@if(clicking){
+  <h1 id="header">Complaints</h1>  
+ <router-outlet></router-outlet>  
+} 
+
+@if(clicked){
+<h1 id="header">Bookings</h1>
 <router-outlet></router-outlet>
 }
-<h1>{{complaintsNotification}} Complaints</h1>
 
+@if(clickedOn){
 
-<button id="reservations" (click)="onClicks()">Reservations</button>
- <router-outlet></router-outlet> 
-
-<div (click)="logOut()"><button>Log out</button></div>
-
-<button (click)="return()">Return car</button>
-
-<button (click)="viewbookings()">View Bookings</button>
-
-<button (click)="viewComplaints()">View Complaints</button>
 <router-outlet></router-outlet>
-
+}
 
 

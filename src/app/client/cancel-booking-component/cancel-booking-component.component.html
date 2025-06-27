@@ -1,62 +1,97 @@
 
-                
+                 
 
-<div>
- <div class="box">
+
+  <div class="box"> 
 
 
       <div class="booking-details">
+
         <h2>finding-bookings</h2>
+
         <p>
-        <input class="input" placeholder="Enter drivers-licence" [(ngModel)]="license" type="text" placeholder="Enter drivers-licence" />
+        <input class="input"  type="text" placeholder="Enter drivers-licence" [(ngModel)]="license">
         </p>
+        
+       @if(license && license.length != 6){
+               <h4>License must be exactly 6 characters long.</h4>
+          }
+
+
         <p> 
          <button   class=dropdown-button  (click)="findBookingByDriversLicence()">find Booking</button>
          </p>
-         <div >
+         @if(messages == undefined){
+          <h3>Invalid booking code</h3>
+
+         }
+         
+
+
+      <div >
             
-                
-
+                  
+ @if(messages){
      <form class="placeholder" (ngSubmit)="deleteBooking()">
-
- 
-    <p>
-     <input type="text"  name ="name"  [placeholder]="getBooking.carName"  required [(ngModel)]="name" />
+     <p>
+      <label>Name</label>
+     <input type="text"  name ="name"  [placeholder]="getBooking.name"  required [(ngModel)]="name" />
      </p>
 
      <p>
-     <input type="text"  name ="name" [placeholder]="getBooking.name"  required  [(ngModel)]="name" />
-     </p>
-     
-     
-     <p>
+      <label>Surname</label>
      <input type="text"  name ="surname" [placeholder]="getBooking.surname"  required  [(ngModel)]="surname" />
      </p>
+
      <p>
-     <input type="text"  name ="email"  [placeholder]="getBooking.email"  required [(ngModel)]="emal" />
+      <label>Email</label>
+     <input type="text"  name ="email"  [placeholder]="getBooking.email"  required [(ngModel)]="email" />
      </p>
+
      <p>
+      <label>License</label>
+     <input type="text"  name ="email"  [placeholder]="getBooking.license"  required [(ngModel)]="license" />
+ 
+
+     </p>
+
+     
+ 
+     <p>
+      <label>Car_Name</label>
+     <input type="text"  name ="name"  [placeholder]="getBooking.carName"  required [(ngModel)]="carName" />
+     </p> 
+     
+     
+     <p>
+      <label>Pick_Up_Date</label>
      <input type="txt"  name ="startData" [placeholder]="getBooking.pickUpDate" required  [(ngModel)]="pick_up_date" />
      </p>
+
+     
      <p>
+     <label>Drop_Of_Date</label> 
      <input type="txt"  name ="end-date" [placeholder]="getBooking.dropOfDate" required [(ngModel)]="drop_of_date"  />
      </p>
 
- 
-<div>
-  <form > 
-    <button   class=dropdown-button (click)="deleteBooking()" >cancel-bookings</button>
+     <p>
+     <label>Cancellation_Fee_of_R300</label> 
+     <input type="txt"  name ="end-date"  required [(ngModel)]="cancellationFee"  />
+     </p>
+     @if(cancellationFee &&  cancellationFee< '300'){
+      <h4>Amount entered is less than R300</h4>
 
- </form>
- </div>
+     }
 
+    
+    <button   class=dropdown-button >cancel-booking</button>
 
- 
+    <h4>{{cancelMessage}}</h4>
 
-  
-     <!-- <h2>your journey ,  your way</h2> -->
-  
+     </form>
+} 
 
+      </div>
 
  
 

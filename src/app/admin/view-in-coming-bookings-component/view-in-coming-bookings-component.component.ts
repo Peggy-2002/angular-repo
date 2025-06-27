@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DataService } from '../../data.service';
-import {  RouterLink, RouterOutlet } from '@angular/router';
+import {  RouterLink, Router,RouterOutlet } from '@angular/router';
 import { flush } from '@angular/core/testing';
 
 @Component({
@@ -10,8 +10,8 @@ import { flush } from '@angular/core/testing';
   styleUrl: './view-in-coming-bookings-component.component.css'
 })
 export class ViewInComingBookingsComponentComponent {
- 
-
+ router =inject(Router);
+click=false;
   constructor(private dataService:DataService){
 
   }
@@ -26,6 +26,19 @@ export class ViewInComingBookingsComponentComponent {
   get incomingbookings(){
     return this.dataService.incomingbooking
     
+  }
+
+  remove(){
+     this.click = false;
+     this.dataService.bookings = [];
+    this.dataService.forms =[];
+    this.router.navigate(["/admin"])
+
+    
+  }
+  clicks(){
+    this.click=true;
+
   }
   
 

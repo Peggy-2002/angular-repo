@@ -73,9 +73,13 @@ export class BookingFormComponentComponent implements OnInit{
       
     
     });
+
     
   
     
+  }
+  get message(){
+    return this.dataService.bookingMessages
   }
 
 

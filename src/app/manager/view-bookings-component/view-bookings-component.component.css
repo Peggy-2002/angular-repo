@@ -1,26 +1,27 @@
-.view{
-    /* background-color: #007bff; */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+#remove{
+    transform: translate(800px,-100px);
+    width: 200px;
+    margin-top: 3px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-    
-    border-radius: 90px;
-   
 }
-#button{
-    background-color: #0069d9;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    border-radius: 30px;
+#remove:hover {
+    background-color: #0C0950;
+    color: aliceblue;
+}
+#bookings{
     width: 500px;
+    margin-top: 3px;
+    border-radius: 10px;
+    cursor: pointer;
 }
-#button:hover{
-    background-color: #007bff ;
+
+#bookings:hover {
+    background-color: #0C0950;
+    color: aliceblue;
+}
+
+
+#box {
+    margin-top: 20px;
 }

@@ -1,3 +1,38 @@
 #router{
     margin-right: 50px;
 }
+
+ img{
+    transform: translate(500px,15px);
+
+    width: 690px;
+    height: 150px;
+}
+h1{
+    transform: translate(1250px,-140px);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 66px;
+    color: deepskyblue;
+}
+ 
+
+
+div{
+    height: 50px;
+    background-color: deepskyblue;
+}
+ button{
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+} 
+ #logOut{
+    transform: translate(60px,15px);
+
+    
+}
+#reservations{
+    transform: translate(150px,15px);
+    
+}

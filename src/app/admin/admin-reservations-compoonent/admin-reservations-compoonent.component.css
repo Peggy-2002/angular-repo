@@ -1,4 +1,26 @@
-#button{
+/* #button{
     margin-left: 375px;
     margin-bottom: 70px;
-}
+} */
+ div{
+    display: flex; 
+    flex-direction: column;
+    background-color:white;
+    
+    width: 170px;
+    height: 140px;
+    gap: 10px;
+    align-items: center;
+    transform: translate(490px,-10px);
+    border: 1px solid black;
+ }
+ button{
+    margin-top: 10px;
+    border: none;
+    padding: 0;
+    background:none;
+    
+    
+ }
+
+ 

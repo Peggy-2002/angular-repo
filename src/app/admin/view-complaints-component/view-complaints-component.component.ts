@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,inject} from '@angular/core';
 import { Complaints } from '../../model';
 import { DataService } from '../../data.service';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink,Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-view-complaints-component',
@@ -10,7 +10,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './view-complaints-component.component.css'
 })
 export class ViewComplaintsComponentComponent implements OnInit{
-
+  router =inject(Router);
+  clicks = true;
+clicking = false;
    booking :Complaints[] =[]
     constructor(private dataService : DataService){
   
@@ -30,4 +32,17 @@ export class ViewComplaintsComponentComponent implements OnInit{
       return this.booking
     }
 
+ remove(){
+      this.clicking =false;
+      this.clicks = false;
+      this.dataService.complaintNotifications = [];
+      this.booking =[];
+      
+      this.router.navigate(["/admin"])
+
+    }
+
+    click(){
+      this.clicking =true;
+    }
 }

@@ -13,7 +13,7 @@ export class ComplaintsDetailsComponentComponent implements OnInit {
 
 booking :Complaints[] =[]
 
-  click = true;
+  clicking = true;
   constructor(private dataService : DataService){
 
   }

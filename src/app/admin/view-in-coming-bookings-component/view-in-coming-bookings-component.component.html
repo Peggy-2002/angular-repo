@@ -1,20 +1,26 @@
 
-
+<div id="box">
+    <!-- <div id="header">Incoming Bookings</div> -->
 
     @for(booking of incomingbooking ;track booking.carName){
     <div>
-        <button [routerLink]="[booking.name,'viewInComingBookingDetails']" >{{booking.name}}</button> 
+        <button (click)="clicks()" id="booking" [routerLink]="[booking.name,'viewInComingBookingDetails']" >{{booking.name}}</button> 
     </div>
 }
 @for(bookings of incomingbookings ;track bookings.carName){
     <div>
-        <button [routerLink]="[bookings.name,'viewInComingBookingDetail']" >{{bookings.name}}</button> 
+        <button (click)="clicks()"id="booking"[routerLink]="[bookings.name,'viewInComingBookingDetail']" >{{bookings.name}}</button> 
     </div>
     
 }
+@if(click){
+<button id="remove" (click) ="remove()">remove</button>
+   <router-outlet></router-outlet>
+}
 
-<router-outlet></router-outlet>
 
+
+</div>
      
      
     

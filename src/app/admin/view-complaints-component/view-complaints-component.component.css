@@ -1,0 +1,35 @@
+#complaints{
+    width: 500px;
+    margin-top: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#complaints:hover {
+    background-color: #0C0950;
+    color: aliceblue;
+}
+
+/* #header {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    font-size: larger;
+    font-weight: bolder;
+} */
+
+#box {
+    margin-top: 20px;
+}
+
+#remove{
+    transform: translate(800px,10px);
+    width: 200px;
+    margin-top: 3px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#remove:hover {
+    background-color: #0C0950;
+    color: aliceblue;
+}

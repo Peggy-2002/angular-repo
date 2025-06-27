@@ -1,0 +1,104 @@
+
+<div class="box">
+    
+   
+                 <p>
+                <input type="text"  name ="name"  [placeholder]="bookings.name"  required [(ngModel)]="name" />
+                 </p> 
+
+                <p>
+                   <input type="text"  name ="surname" [placeholder]="bookings.surname"  required  [(ngModel)]="surname" />
+                 </p>
+
+                <p>
+                <input type="text"  name ="email"  [placeholder]="bookings.email"  required [(ngModel)]="email" />
+                </p>
+
+                 <p>
+                <input type="text"  name ="email"  [placeholder]="bookings.license"  required [(ngModel)]="license" />
+                </p>
+
+                <p>
+                <input type="text"  name ="carName"  [placeholder]="bookings.carName"  required [(ngModel)]="carName" />
+                 </p> 
+
+                <p>
+                <input type="txt"  name ="startData" [placeholder]="bookings.pickUpDate" required  [(ngModel)]="pickUpDate" />
+                </p>
+
+                 <p>
+                 <input type="txt"  name ="end-date" [placeholder]="bookings.dropOfDate" required [(ngModel)]="dropOfDate"  />
+                </p>
+               
+
+
+
+
+           
+                  <form  class="box" (ngSubmit)="submitBooking()" #f="ngForm">
+       
+                       <h2>update-bookings</h2> 
+                         <p>
+                         <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
+                        </p>
+
+                         <p>
+                        <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+                         </p>
+
+                         <P>
+                         <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />
+                          </P>
+
+
+                        <p>
+
+                         <input type="drivers-licence"  name ="drivers-licence" placeholder="Drivers-licence" required [(ngModel)]="license"  />
+                         </p>
+
+                        
+                         <p>
+                        <select id="car-name"  name="car-name"  [(ngModel)]="carName">
+                       <option disabled selected hidden value="">car-name</option>
+
+                       @for(car of carNames; track car.name){
+     
+                         <h1>{{car.name}}</h1>
+                         <option  [value]="car.name">{{car.name}}</option>
+                          }
+                         </select><br />
+                          </p>
+     
+                          <p>
+
+     
+                          <p>
+
+                          <input type="date"  name ="startDate" placeholder="pickUpDate" required   [(ngModel)]="pickUpDate" />
+                          </p>
+
+                           <p>
+
+                         <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/>
+                            </p>
+                            @if(dropOfDate < pickUpDate){
+                                 <h4>Please enter valid dates</h4>
+                             }
+    
+                             <button   [disabled]="!f.valid" data="disabled" class ="dropdown-button" type="submit">save</button>
+                             
+                             
+                             <h3>{{message}}</h3>
+    
+                        
+                    </form>
+                
+</div>
+                
+                
+            
+        
+    
+
+
+    

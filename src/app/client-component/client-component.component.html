@@ -1,13 +1,21 @@
-<p>client-component works!</p>
+
+
+<!-- <div></div> -->
 
 
 
+    <div class="box">
+       <button id=logOut (click)="logOut()"  >Log out</button>
+       <button  id="reservations"  (click)="reservations()">Reservations</button> 
+    </div>  
 
-    <div id="reservations"  (click)="reservations()"><button>Reservations</button></div>
+    <!-- <button id=logOut (click)="logOut()"  >Log out</button>
+       <button  id="reservations"  (click)="reservations()">Reservations</button> -->
+    <img src="https://as2.ftcdn.net/jpg/02/72/84/03/1000_F_272840339_CaCBmULs06ex2NK6KYeUYoWNgSfRH1QK.webp"> 
 
-
+<h1>{{name}}</h1>
     <router-outlet id="router"></router-outlet>
-    <div (click)="logOut()"><button>Log out</button></div>
+    
 
 
 
