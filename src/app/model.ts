@@ -143,6 +143,7 @@ export  interface Forms {
    picture:string;
    seater:number;
    status:string ;
+   price:number;
    
 
  } 
@@ -160,6 +161,7 @@ export interface Cars {
    seater:number;
    status:string ;
    id:number;
+   price:number
    
 
  } 
@@ -168,6 +170,8 @@ export interface Cars {
  export interface CarName {
   name:string
  }
+
+ 
 
 
 

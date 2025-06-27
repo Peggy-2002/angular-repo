@@ -2,7 +2,7 @@
     margin-right: 50px;
 }
 
-img{
+ img{
     transform: translate(500px,15px);
 
     width: 690px;
@@ -14,20 +14,28 @@ h1{
     font-size: 66px;
     color: deepskyblue;
 }
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> d4ba94b1033d44430c4cf250bc4fa0cb3db9eb22
 
-#box{
+
+div{
     height: 50px;
     background-color: deepskyblue;
 }
-button{
+ button{
     border: none;
     padding: 0;
     background:none;
     color:white;
-}
-#logOut{
+} 
+ #logOut{
     transform: translate(60px,15px);
+
+    
 }
 #reservations{
     transform: translate(150px,15px);
+    
 }

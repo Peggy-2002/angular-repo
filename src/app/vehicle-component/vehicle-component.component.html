@@ -1,9 +1,36 @@
-<p>vehicle-component works!</p>
 
+
+<div class="box">
 @for(car of cars; track car.name){
-<h1>{{car.name}}</h1>
-<h1>{{car.seater}}</h1>
-<h1>{{car.status}}</h1>
-<h1>{{car.picture}}</h1> 
+
+    <div class="box2">
+    <img [src]="car.picture" >
+     <h1>{{car.name}}</h1>
+    <h4>Status: {{car.status}}</h4>
+     <h4>Seater: {{car.seater}}</h4>
+    <h4>Price: R{{car.price}}</h4>
+
+    </div>
+   
+
 }
+
+@if(cars.length == 0){
+    <h1>No cars available for booking</h1>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
 

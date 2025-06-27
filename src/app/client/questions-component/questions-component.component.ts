@@ -14,4 +14,6 @@ export class QuestionsComponentComponent {
     this.router.navigate(["/"]);
   }
 
+  
+
 }

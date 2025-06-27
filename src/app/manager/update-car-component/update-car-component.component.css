@@ -1,0 +1,57 @@
+.box2{
+    transform: translate(1000px,-220px );
+}
+
+/* #form2{
+    margin-top:-400px;
+} */
+.find{
+     max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(83, 219, 224, 0.1);
+
+}
+.button{
+     background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.button:hover{
+    background-color: #0069d9;
+
+}
+.form2{
+    margin-right: 20px;
+}
+#button1{
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#button1:hover{
+     background-color: #0069d9;
+
+}
+.update{
+     max-width: 400px;
+    margin: opx;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(83, 219, 224, 0.1);
+
+
+}
+

@@ -2,7 +2,7 @@
 
 
 
-
+<div  class="allOver">
 <div class="box">
     <form class="placeholder" (ngSubmit)="submitBooking()">
         <h2>finding-bookings</h2>
@@ -62,8 +62,14 @@
 
 
 
+
+
+
+
+    
            
-                  <form  class="box" (ngSubmit)="submitBooking()">
+                  
+                <form  class="box" (ngSubmit)="submitBooking()">
        
                        <h2>update-bookings</h2> 
                          <p>
@@ -79,8 +85,13 @@
                           </P>
 
 
-                        <p>
+                        
 
+<<<<<<< HEAD
+=======
+    
+                          <p>
+>>>>>>> d4ba94b1033d44430c4cf250bc4fa0cb3db9eb22
                          <input type="drivers-licence"  name ="drivers-licence" [placeholder]="getBooking.license" required [(ngModel)]="license"  />
                          </p>
 
@@ -110,15 +121,19 @@
                            <h1>Please enter valid dates</h1>
                              }
     
+        
+
                              <button   class ="dropdown-button" type="submit">save</button>
                              
                              
                              <h4>{{message}}</h4>
     
-                        
-                    </form>
-                }
+                    </form>      
+                    
+                  }
+                
 </div>
+
                 
                 
             

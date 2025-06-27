@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-=======
 #createAccount{
     margin-left: 1400px;
-    margin-top: 70px;
-    background-color: deepskyblue;
+    /* margin-top: 70px; */
+    transform: translate(130px,-280px);
+    background-color: #007bff;
     height:345px;
     width:250px;
     padding: 3px;
@@ -17,24 +16,28 @@
 
 
 #submitbutton:active{
-    background-color: dodgerblue;
-    border: 0cap;
+ background-color: dodgerblue; 
+  border: 0cap; 
+   
 }
 #submitbutton{
     padding: 8px 16px;
     font-family: 300;
     font-size: 14px;
-    border: 1px slid#999;
-    border-radius: 999px;
-    background-color: transparent;
+    /* border: 1px slid#999; */
+    /* border-radius: 999px; */
+    /* background-color: transparent; */
     cursor: pointer;
     margin-left: 100px;
     margin-top: 20px;
+
+    background-color: #007bff;
+    color: azure;
+    border-radius: 5px;
 }
 
 #name{
     margin-top: 7px;
 }
 
->>>>>>> e93d9f257f7e91e5903fc2d8604911387354adb1
 

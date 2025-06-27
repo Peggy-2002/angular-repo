@@ -1,12 +1,29 @@
-#contact{
-    margin-left: 750px;
-    position: relative;
-bottom: 50px;
+
+.container{
+ margin-left: 750px;
+
+transform: translate(60px,-240px);
+
+
+
 
 }
 
-#frequently{
-    
-     /* position: relative;
-bottom: 25px; */
+div{
+border: rgb(68, 68, 184);
+width: 70px;
+height: 90px;
+
+
+display: flex;
+flex-direction: column; 
+  /* background-color: rgba(243, 243, 243, 0.918); */
+ background-color: white;
+box-shadow:  rgb(146, 183, 233);
+width: 150px;
+height: 110px; 
+align-items: center;
+/* border-radius: 5px; */
+margin-top:-10px;
+position: absolute;
 }

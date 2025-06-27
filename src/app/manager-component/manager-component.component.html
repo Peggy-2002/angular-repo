@@ -1,22 +1,25 @@
 
                                                  
                                           
-
-
-
-                                     <button  id="addCar"(click)="addCar()">AddCar</button>
-                                   
-
-                                          
-                                            <button  id="vehicles"(click)="vehicles()">Vehicles</button>
+<div class="over">
+<div class="rebon">
+ <label  id="addCar"(click)="addCar()">AddCar</label>
+                                                                       
+<label  id="vehicles"(click)="vehicles()">Vehicles</label>
                                             
+ <label id="remove" (click)="remove()">Remove Car</label>
 
-                                            <button id="remove" (click)="remove()">Remove Car</button>
-                                            <button (click)="update()">Update car</button>
+<label id="update" (click)="update()">Update car</label>
 
-                                            <button (click)="viewBookings()">View Bookings</button>
+<label id="viewBookings" (click)="viewBookings()">View Bookings</label>
 
-                                            <div id="logOut"(click)="logOut()"><button>Log out</button></div>
+<div id="logOut"(click)="logOut()"><button>Log out</button></div>
+</div>
+</div>
+
+
+
+
                                             
 <router-outlet></router-outlet>
 

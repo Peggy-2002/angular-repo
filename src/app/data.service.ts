@@ -148,6 +148,7 @@ login(log : Login){
 
     }
     get updateCars(){
+        // alert("car details updated")
         return this.updateMessage;
     }
 
@@ -167,6 +168,7 @@ login(log : Login){
         });
      
         this.bookings.push(booking)
+        
         
         
        

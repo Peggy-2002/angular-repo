@@ -4,7 +4,9 @@
     height: 700px;
     margin-top: 80px;
     padding:10px;
+    
 }
+
 
 #login{
     margin-top: -760px;
@@ -47,8 +49,11 @@ padding: 8px 16px;
 
 #reservations{
    margin-left: 370px; 
-   margin-top: -26px;
+   margin-top: -20px;
    width: 135px;
+   font-size: larger;
+   font-style:normal;
+   font-weight: 500;
 
 }
 
@@ -56,39 +61,84 @@ padding: 8px 16px;
     margin-left: 570px;
     position: relative;
     bottom: 20px;
+    font-size: larger;
+   font-style:normal;
+   font-weight: 530;
+   
 }
 
 #contact{
     margin-left: 100px;
     position: relative;
-    bottom: 19px;
+    bottom: 20px;
+    font-size:larger;
+   font-style:normal;
+   font-weight: 500;
 
     
 }
-.buttonOne:hover{
-    font-size: x-large;
+#reservations:hover{
+    font-size: large;
     font-family :Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#vehicles:hover{
+    font-size: large;
+    font-family :Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
-  /* background-image:linear-gradient(#b1e0c9, rgb(125, 155, 153)) ; */
-  /* color: #ccc; */
+#contact:hover{
+      font-size: large;
+    font-family :Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 
-#pickUpDate{
+
+
+
+.myVehicle{
     position: relative;
-    top:300px;
-right: 170px;
+    top:280px;
+    right: 70px;
+
+    width: 50%;
+    margin: 90px auto;
+    height: 80px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
 }
-#dropOfDate{
-    position: relative;
-    top:300px;
-    right: 170px;
+ input{
+    margin-top: 30px;
+    width: 200px;
+    height: 30px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
     
+   
+    /* margin-left: 60px; */
+} 
+#label{
+    margin-left: 20px;
+    color: #222121;
 }
-#vehicle{
-     position: relative;
-    top:300px;
-right: 170px;
 
+#vehicle{
+   background-color: #007bff;
+   color: #ffffff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+    margin-left: 30px;
 }
+#vehicle:hover{
+    background-color: #0056b3;
+}
+
 

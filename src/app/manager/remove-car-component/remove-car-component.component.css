@@ -1,0 +1,45 @@
+.removeCar{
+     max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(83, 219, 224, 0.1);
+}
+
+#button{
+     background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+#button:hover{
+    background-color: #0069d9;
+}
+input{
+    width: 65%;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#button1{
+    margin-left: 1000px;
+    transform: translate(75px,-130px);
+    margin-right: 40px;
+     background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+#button1:hover{
+    background-color: #0069d9;
+}
+
