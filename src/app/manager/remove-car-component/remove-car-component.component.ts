@@ -16,6 +16,54 @@ export class RemoveCarComponentComponent {
   clicks = true;
 
   name=""
+names :string[]=[
+    
+    
+
+   ]
+ 
+  
+    ngOnInit(): void {
+      this.dataService.getCars().subscribe({
+        next :(resData) =>{
+          for(let i=0; i<resData.length;i++){
+        this.names.push(resData[i].name) 
+    }
+    
+        
+        }
+        
+  
+      })
+      console.log(this.names)
+
+
+
+
+      
+     
+    }
+    get bookings(){
+      return this.names
+      
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   getCar(){
     console.log(this.name)
@@ -24,6 +72,9 @@ export class RemoveCarComponentComponent {
 
 
   }
+
+
+
 
   get printCar(){
     return this.dataService.viewCar

@@ -1,14 +1,14 @@
 
-                 <!-- <h1>Cancel</h1> -->
+                
 
-
+<div>
  <div class="box">
 
 
       <div class="booking-details">
         <h2>finding-bookings</h2>
         <p>
-        <input class="input" [(ngModel)]="license" type="text" placeholder="Enter drivers-licence" />
+        <input class="input" placeholder="Enter drivers-licence" [(ngModel)]="license" type="text" placeholder="Enter drivers-licence" />
         </p>
         <p> 
          <button   class=dropdown-button  (click)="findBookingByDriversLicence()">find Booking</button>
@@ -22,7 +22,13 @@
  
     <p>
      <input type="text"  name ="name"  [placeholder]="getBooking.carName"  required [(ngModel)]="name" />
-     </p> 
+     </p>
+
+     <p>
+     <input type="text"  name ="name" [placeholder]="getBooking.name"  required  [(ngModel)]="name" />
+     </p>
+     
+     
      <p>
      <input type="text"  name ="surname" [placeholder]="getBooking.surname"  required  [(ngModel)]="surname" />
      </p>
@@ -36,27 +42,20 @@
      <input type="txt"  name ="end-date" [placeholder]="getBooking.dropOfDate" required [(ngModel)]="drop_of_date"  />
      </p>
 
-     <!-- <input type="txt"  name ="booking-payment" [placeholder]="getBooking." required [(ngModel)]="payment" /> -->
-
-     
-
-    
-
-
-
-
-
-
-
-
-
+ 
+<div>
   <form > 
-
-
-    <!-- <input type="text" name ="name" placeholder="driversLicence"  [(ngModel)]="license" />  -->
     <button   class=dropdown-button (click)="deleteBooking()" >cancel-bookings</button>
 
  </form>
+ </div>
+
+
+ 
+
+  
+     <!-- <h2>your journey ,  your way</h2> -->
+  
 
 
  

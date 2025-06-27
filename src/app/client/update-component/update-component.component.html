@@ -2,7 +2,7 @@
 
 
 
-
+<div  class="allOver">
 <div class="box">
         <h2>finding-bookings</h2>
         <p>
@@ -43,19 +43,8 @@
 
 
 
-
-
-
-
-
-
-            
-
-
-
-
-<div>
-    <form  class="box" (ngSubmit)="submitBooking()">
+<div class="box1" >
+    <form   (ngSubmit)="submitBooking()">
        
         <h2>update-bookings</h2> 
      <p>
@@ -78,7 +67,7 @@
      <input type="drivers-licence"  name ="drivers-licence" placeholder="Drivers-licence" required [(ngModel)]="license"  />
      </p>
 
-     <!-- <input type="number"  name ="booking-payment" placeholder="Booking-payment" required [(ngModel)]="bookingPayment" /> -->
+    
       <p>
 
     <input type="date"  name ="startDate" placeholder="pickUpDate" required   [(ngModel)]="pickUpDate" />
@@ -94,9 +83,7 @@
     
         
 
-    </form>
-
-
-   
+</form>
     
 </div>
+

@@ -1,22 +1,44 @@
 @if(click){
-<div>
- <form (ngSubmit)="onSubmit() "  >
-    <p><label>Name </label>
-   <input type="text"  name ="name" [(ngModel)]="name"/></p>
+<div class="addForm">
+  <div class="form-header">
+    
+ <form (ngSubmit)="onSubmit() " #f="ngForm" >
+  <div class="form-field">
+    
+   <input type="text"  placeholder="Enter your name" name ="name" required [(ngModel)]="name"/>
 
-   <p><label>Picture </label>
-    <input type="text"   name="picture" [(ngModel)]="picture"/></p>
+   @for (names of bookings; track name) {
+    @if (name == names) {
+      <h2>Name already exist</h2>
 
-    <p><label>Status </label>
-    <input  type="text"  name="status" [(ngModel)]="status"/></p>
+    }
+   }
 
-   <p> <label>Car Seaters </label>
-    <input   type="text"  name="seaters" [(ngModel)]="seaters"/></p>
-      <button >Submit</button>
+   
 
-      
+   
+      <p>
+    <input type="text" placeholder="Enter picture"  name="picture"  required [(ngModel)]="picture"/></p>
+
+    
+      <p>
+    <input  type="text" placeholder="Enter status" name="status"  required [(ngModel)]="status"/></p>
+
+   
+    
+      <p>
+    <input   type="text" placeholder="Enter  seaters"  name="seaters"  required [(ngModel)]="seaters"/></p>
+
+    
+      <p>
+    <input   type="number"  placeholder="Enter price" name="price" required [(ngModel)]="price"/></p>
+      <button class="button" [disabled]="!f.valid" data="disabled">Submit</button>
+
+     </div> 
               
   </form>
 </div>
+</div>
+
 }
 <h1>{{addCarMessage}}</h1>

@@ -1,10 +1,10 @@
-select{
+ /* select{
     width: 1050px;
     height: 80px;
     font-size: 58px;
     padding: 10px;
-}
-div{
+} */
+/* div{
     background-color: beige;
     width: 1100px;
     height: 800px;
@@ -13,4 +13,72 @@ div{
 }
 #o{
     font-size: 6px;
+} */ 
+
+.container{
+background-image: url('https://www.mcgill.ca/oss/files/oss/styles/hd/public/screen_shot_2019-09-20_at_11.33.41_am.png?itok=I0n94ii7&timestamp=1568993730') ;
+background-size:cover;
+margin: 0 auto;
+height: 40vh;
+diplay :flex; 
+justify-content: centre;
+align-items: center; 
+}
+#button{
+    width: 60px;
+    height: 20px;
+    background-color: white;
+    color:black;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.container2{
+     margin-top: 100px;
+    margin-left: 100px;
+    display: flexbox; 
+    margin-bottom:20px ;
+    padding-bottom: 20px;
+    border-bottom :1px solid #ccc ;
+
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+details{
+    margin-bottom: 20px;
+}
+summary{
+    cursor: pointer;
+    
+}
+
+hr{
+    width: 75%;
+    margin-right: 600px;
+    margin: 0 auto;
+}
+
+.text{
+     color: rgb(70, 68, 68);
+     background-color:rgb(220, 221, 221);
+     margin-bottom: 30px; 
+     /* width:200px;   */
+     /* transform: translate(1px , -625px); */
+      
+     
+    height: 70px; 
+    
+}
+h1{
+     margin-left: 600px;
+     margin-top: 28px; 
+}
+select{
+    margin-left: 1000px;
 }

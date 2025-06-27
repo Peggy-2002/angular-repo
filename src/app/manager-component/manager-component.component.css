@@ -1,16 +1,64 @@
 #addCar{
-    margin-left: 300px;
-   
-    
-    
-    
-}
-#vehicles{
     margin-left: 400px;
+    color: white;
+    font-size: large; 
+    transform: translate(200px,-400px);   
+}
+
+
+
+#vehicles{
+    margin-left: 70px;
+    margin-top: 40px;
+    color: white;
+    font-size: large;
 
     
 }
 
 #remove{
-    margin-left: 330px;
+    margin-left: 90px;
+     margin-top: 40px;
+    color: white;
+    font-size: large;
 }
+
+#update{
+     margin-left: 90px;
+     margin-top: 40px;
+    color: white;
+    font-size: large;
+
+}
+
+#viewBookings{
+     margin-left: 90px;
+     margin-top: 40px;
+    color: white;
+    font-size: large;
+
+}
+
+.rebon{
+  background-color: rgb(19, 44, 155);
+  height: 75px;
+}
+#logOut{
+    margin-left: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#logOut :hover{
+    
+    background-image: -moz-linear-gradient(to right ,rgb(184, 184, 184), #143b8e);
+
+}
+
+
+
+

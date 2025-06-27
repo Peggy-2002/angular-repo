@@ -1,20 +1,74 @@
-<p>update-car-component works!</p>
-@if(click){
+
+ <div class="find"> 
 <form (ngSubmit)="getCar()">
-    <label id="name">Name of car</label>
-    <input name="name"  type="text"  [(ngModel)]="names"/>
-    <button>SearchCar</button>
-</form>
-}
+  
+     <p>
+    <input name="name"placeholder="Enter car-name"  type="text"  [(ngModel)]="name"/></p>
+    <button class="button">SearchCar</button>
 
-@if(clicks){
-
-    <input name="name" [placeholder]= 'printCar.name' [(ngModel)]="name"/>
-    <input name="name" [placeholder]= 'printCar.picture' [(ngModel)]="picture"/>
-    <input name="name" [placeholder]= 'printCar.seater' [(ngModel)]="seater"/>
-    <input name="name" [placeholder]= 'printCar.status' [(ngModel)]="status"/>
+       
+     </form > 
+     </div >
     
+   
 
-<button (click)="updateCar()">Update</button>
-}
+     <!-- @for(names of bookings; track name){
+    @if (!names.includes(name)) {
+      <h4>Invalid name</h4>  -->
+
+     <div class="update">
+    <p>
+   <input type="text" placeholder="car-name"  name ="name" [(ngModel)]="name"/></p>
+
+   <p>
+    <input type="text" placeholder="car-picture"  name="picture" [(ngModel)]="picture"/></p>
+
+    <p>
+    <input  type="text"   placeholder="status" name="status" [(ngModel)]="status"/></p>
+
+   
+    <p>
+    <input   type="text"  placeholder="seaters" name="seaters" [(ngModel)]="seater"/></p>
+
+    <p>
+    <input   type="number"  placeholder="price" name="price" [(ngModel)]="price"/></p>
+     
+
+      <button id="button1" (click)="updateCar()">Update</button> 
+      </div>
+
+      
+              
+   <!-- </form> 
+    </div>  --> 
+
+
+
+  
+
+
+    <!-- }
+   } -->
+
+
+
+    
+  
+
+<div class="box2">
+ <img [src]="printCar.picture" >
+  <h1>{{printCar.name}}</h1>
+ <h4>Status: {{printCar.status}}</h4>
+  <h4>Seater: {{printCar.seater}}</h4>
+ <h4>Price: R{{printCar.price}}</h4>
+</div>
+
+ 
+
+
+
+
+
+
+   
 <h1>{{carMessages}}</h1>

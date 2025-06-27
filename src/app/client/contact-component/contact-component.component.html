@@ -1,21 +1,59 @@
-<p>contact-component works!</p>
+<!-- <p>contact-component works! ...</p> -->
 
-
-<button (click)="back()">Back</button>
+<diV class="container">
+<button id="button" (click)="back()">Back</button>
 
 <form (ngSubmit)="onSubmit()">
+  <p>
   <label>Name</label>
-  <input name="name" type="text" [(ngModel)]="name"/>
-
+  <input name="name" placeholder="Enter your name"  type="text" [(ngModel)]="name"/>
+  </p>
+  <p>
 <label>Surname</label>
-  <input name="surname" type="text" [(ngModel)]="surname"/>
+  <input name="surname" placeholder="Enter your surname" type="text" [(ngModel)]="surname"/>
+  </p>
+  <p>
 <label>Phone Number</label>
-  <input name="number" type="text" [(ngModel)]="phoneNumber"/>
+  <input name="number" placeholder="Enter your numbers" type="text" [(ngModel)]="phoneNumber"/>
+  </p>
+  <p>
   <label>Message</label>
-  <input name="message" type="text" [(ngModel)]="message"/>
-
+  <input id="message"  name="message" type="text" [(ngModel)]="message"/>
+  </p>
+  <p>
   <button>Submit</button>
+  
+  </p>
 @if(click){
   <h1>{{messages}}</h1>
 }
 </form>
+<div class="text">
+  <h1 >Contact Us</h1>
+</div>
+</diV>
+<h4 id="p">send us message</h4>
+
+
+<div class="text1">
+  <h3>contact us</h3>
+  <hr>
+  <h4>PO Box 145</h4>
+  <h4>Klersdorp </h4>
+  <h4>1755</h4>
+  <hr>
+   <h3>Customer Services</h3>
+  <h4>Telephone: +27 21935 4500 </h4>
+  <h4>Fax +27 2134 3243 </h4>
+  <h4>carRentalsystem.coza </h4>
+  
+  <hr>
+  <h3>Central Reservations</h3>
+  <h4>Domestic Customers: 086 16600134 </h4>
+  
+
+
+
+
+
+</div>

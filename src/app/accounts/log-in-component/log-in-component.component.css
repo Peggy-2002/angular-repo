@@ -1,7 +1,7 @@
 #login{
     margin-left: 1400px;
-    margin-top: 70px;
-    background-color: deepskyblue;
+   transform: translate(50px,-270px);
+    background-color: #007bff;
     height:192px;
     width:220px;
     padding: 3px;
@@ -22,6 +22,9 @@
 
     margin-left: 10px;
     margin-top: 20px;
+    background-color: #007bff;
+    color: azure;
+    border-radius: 5px;
 } 
 
  #name{

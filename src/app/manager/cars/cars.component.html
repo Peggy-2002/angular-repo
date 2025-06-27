@@ -1,9 +1,193 @@
-<p>cars works!</p>
+<div class="rebon">
 
+</div>
+
+<div class="box">
 @for(car of cars; track car.name){
-    <h1>{{car.name}}</h1>
-    <h1>{{car.seater}}</h1>
-    <h1>{{car.picture}}</h1>
-    <h1>{{car.status}}</h1>
+
+    <div class="box2">
+    <img [src]="car.picture" >
+     <h1>{{car.name}}</h1>
+    <h4>Status: {{car.status}}</h4>
+     <h4>Seater: {{car.seater}}</h4>
+    <h4>Price: R{{car.price}}</h4>
+
+    </div>
+   
 
 }
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cars.component.css">
+</head>
+<body>
+    <div class="status-bar">
+        <div class="nav-buttons">
+            <button>&#8594;</button>
+            <button>&#8942;</button>
+        </div>
+    </div>
+
+    <div class="box">
+
+    <div  class="main-content">
+        <div  class="logo">
+            <img src ="" >
+
+        </div >
+        <div class="car-image">
+            <img src="data:image/jpeg;base64,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 " alt="toyota-corolla">
+        </div>
+        <div class="car-details">
+            <h2>Toyota Corolla</h2>
+            <p> &#x1F46A;  5 passengers</p>
+            <p>2 large ,1 small</p>  
+            <p> 5 Doors</p>
+            <p>Automatic</p>
+            <p>air condiction</p>
+            
+        </div>
+       
+    </div>
+    </div>
+    <div class="box2">
+         <img src = "https://www.hertz.co.za/media/2024/09/pvad-kombi-fsc-632x422-1-316x211.png" alt="volkswagen kombi">
+         <h2>Volkswagen kombi or similar auto</h2>
+         <p>8 passengers</p>
+         <p>3 Large, 2 small</p>
+         <p>5 Doors</p>
+         <p>Automatic</p>
+         <p>Airconditioning</p>
+     </div>
+
+     <div class="box3">
+        <img src="https://www.hertz.co.za/media/2024/09/rfar-fortuner-fsc-632x422-1-316x211.png" alt="Toyota Fortuner">
+        <h2>Toyota Fortuner 2.4 RWD </h2>
+        <p> 7 passengers</p>
+        <p> 2Large,2 small</p>
+        <p>5 Doors</p>
+        <p>Automatic</p>
+        <p>Airconditioning </p>
+
+     </div>
+
+     <div class="box4">
+        <img src="https://www.hertz.co.za/media/2024/09/edmv-polovivo-fsc-632x422-1-316x211.png" alt="Volswagen polo">
+        <h2>Volkswagen Polo Vivo </h2>
+        <p>4 passengers</p>
+        <p> 1 Large, 2 Small</p>
+        <p>5 Doors</p>
+        <p>manual</p>
+        <p>Aircondction</p>
+
+     </div>
+     <div class="box5">
+        <img src="https://www.hertz.co.za/media/2024/09/fdar-bmw320-fsc-632x422-1-316x211.png" alt ="BMW">
+        <h2>BMW series or similar -Auto</h2>
+        <p>5 passengers</p>
+        <p>2Large,2 small</p>
+        <p>4Doors</p>
+        <p>Automatic</p>
+        <p>Airconditioning</p>
+    
+     </div>
+
+     <div class="box6">
+        <img src="https://www.hertz.co.za/media/2024/09/gpmr-hiluxsingle-fsc-632x422-1-316x211.png" alt="Toyota Hilux">
+        <h2>Toyota Hillux 2.4 GD-6 RB Raider RWD</h2>
+        <P>2 Passengers</P>
+        <P>Airconditioning</P>
+        <P>power steering</P>
+        <P>Manual</P>
+        <P></P>
+        <P>2 Doors</P>
+        
+     </div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+

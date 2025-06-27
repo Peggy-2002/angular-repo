@@ -1,15 +1,19 @@
-
-<div>
+<div id="allOver">
+<div id="boxe" class="box">
 
 
  <form (ngSubmit)="onSubmit()" >
-        <h2>Booking a Car</h2> 
+        <h2>Booking a Car</h2>
+     <p> 
      <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
-
+     </p>
+     <p>
      <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+     </p>
       <!-- <input type="text" id="cars" name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />    -->
        
         <select id="car-name"  value="Cars" name="car-name" [(ngModel)]="carName">
+            <option disabled selected hidden value="" id="o">car-name</option>
              @for(car of carNames; track car.name){
      
                     <h1>{{car.name}}</h1>
@@ -17,17 +21,28 @@
                 }
             </select><br />
             
-
+    <p>
      <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />
-
+    </p>
+    <p>
      <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license" required [(ngModel)]="license"  />
+     </p>
+     <p>
+    <input type="date"  id="date" name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
+     </p>
 
-    <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
+     <p>
 
-    <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDtae"/> 
+    <input type="date"  id="date" name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDtae"/> 
+    </p>
 
     
-        <button  >Book</button>
+        <button class="dropdown-button" >Book</button>
 
 </form>
+     </div>
+     </div>
+
+     <div>
+        <h2>your journey ,  your way</h2>
      </div>
