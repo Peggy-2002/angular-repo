@@ -1,9 +1,6 @@
-/* #reservations{
-     margin-left: 354px; 
-    
-/* } */
+
  div{
-    background-color: darkblue;
+    background-color: #007bff;
     height: 70px;
     
     
@@ -11,8 +8,7 @@
 } 
 #logo{
     
-/* position: relative;
-bottom: 110px;  */
+
 transform: translate(20px,30px);
  color:white;
 font-size: 20px; 

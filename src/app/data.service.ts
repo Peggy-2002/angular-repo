@@ -55,7 +55,7 @@ export class DataService {
     onSubmit(signUp :SignUp){
         
         this.httpClient.post<{"message" : string}>("/api/signUp",signUp).subscribe({
-            next:(resData) => this.signUpMessage = resData.message
+            next:(resData) => {this.signUpMessage = resData.message}
         });
         
         console.log(this.signUpMessage)
@@ -97,7 +97,7 @@ login(log : Login){
      cars(cars:Car){
          
         this.httpClient.post<{"message" : string}>("/api/addCar",cars).subscribe({
-            next:(resData) => this.addCarMessage = resData.message
+            next:(resData) => {this.addCarMessage = resData.message}
         });
 
 
@@ -121,7 +121,7 @@ login(log : Login){
     }
     searchCar(name:string){
         this.httpClient.get<Cars>(`/api/searchCar/${name}`).subscribe({
-            next:(resData) => this.car = resData
+            next:(resData) =>{this.car = resData}
         });
 
     }
@@ -132,7 +132,7 @@ login(log : Login){
 
     removeCar(name:string){
         this.httpClient.delete<{'message' :string}>(`/api/removeCar/${name}`).subscribe({
-            next:(resData) => this.deleteCarMessage = resData.message
+            next:(resData) =>{ this.deleteCarMessage = resData.message}
         });
 
     }
@@ -143,12 +143,12 @@ login(log : Login){
 
     updateCar(car:Cars){
        this.httpClient.patch<{'message' :string}>(`/api/updateCar`,car).subscribe({
-            next:(resData) => this.updateMessage = resData.message
+            next:(resData) => {this.updateMessage = resData.message}
         }); 
 
     }
     get updateCars(){
-        // alert("car details updated")
+        
         return this.updateMessage;
     }
 
@@ -156,19 +156,20 @@ login(log : Login){
     
 
 
-    booking(booking :BookingForm){
+    booking(bookings :BookingForm){
         
-        console.log(booking)
+        console.log(bookings)
 
-        this.httpClient.post<{'message':string}>("/api/booking",booking).subscribe({
+        this.httpClient.post<{'message':string}>("/api/booking",bookings).subscribe({
             next:(resData) => {this.bookingMessage = resData.message
                 console.log(this.bookingMessage)
             }
             
         });
      
-        this.bookings.push(booking)
-        
+        this.bookings.push(bookings)
+        this.save();
+       
         
         
        
@@ -187,6 +188,25 @@ login(log : Login){
         return this.bookings.length + this.forms.length;
     }
 
+     constructor(){
+    const bookingNotifications = localStorage.getItem('bookings');
+    const bookingsNotification =localStorage.getItem('forms')
+     const complaints =localStorage.getItem('complaintNotifications')
+    if(bookingNotifications && bookingsNotification && complaints){
+        this.bookings = JSON.parse(bookingNotifications)
+         this.forms = JSON.parse(bookingsNotification)
+         this.complaintNotifications = JSON.parse(complaints)
+    }
+}
+
+private save(){
+    localStorage.setItem('bookings',JSON.stringify(this.bookings));
+     localStorage.setItem('forms',JSON.stringify(this.forms));
+     localStorage.setItem('complaintNotifications',JSON.stringify(this.complaintNotifications))
+}
+
+
+
     get incomingbookings(){
         return this.bookings
     }
@@ -196,13 +216,14 @@ login(log : Login){
     }
     
 
-     form(booking :Form){
+     form(forms :Form){
         
 
-        this.httpClient.post<{'message':string}>("/api/bookings",booking).subscribe({
-            next:(resData) => this.bookingMessages = resData.message
+        this.httpClient.post<{'message':string}>("/api/bookings",forms).subscribe({
+            next:(resData) => {this.bookingMessages = resData.message}
         });
-        this.forms.push(booking)
+        this.forms.push(forms)
+        this.save();
          
         
         
@@ -224,6 +245,11 @@ login(log : Login){
         return this.httpClient.get<Booking[]>("/api/viewbookings")
 
     }
+     getPassword() : Observable<SignUp[]>{
+        return this.httpClient.get<SignUp[]>("/api/passwords")
+
+    }
+
      bookingByDriversLicense(license: number){
         this.httpClient.get<Booking>(`/api/bookings/${license}`).subscribe(response => {
             this.bookingforms =response;
@@ -247,7 +273,7 @@ login(log : Login){
         return this.bookingform
     }
 
-getBookingByDriversLicense(license: number){
+       getBookingByDriversLicense(license: number){
         this.httpClient.get<BookingForm>(`/api/bookings/${license}`).subscribe(response => {
             this.clientBooking =response;
             
@@ -263,20 +289,18 @@ getBookingByDriversLicense(license: number){
 
 
 
-    // getBooking(){
-    //     return this.httpClient.get("/api/bookings")
-    // }
-
+    
     deleteBooking(bookingform :Bookings){
         
         this.httpClient.post<{'message':string}>("api/update-bookings",bookingform).subscribe( {
             next:(resData) => {this.cancelMessage = resData.message
-                console.log(this.cancelMessage)
+                
 
             }
         }
 
         )
+        
 
     }
 
@@ -312,7 +336,7 @@ getBookingByDriversLicense(license: number){
     editBooking(license :number ,bookingform:BookingForm){
         console.log(license,bookingform)
         this.httpClient.put<{'message':string}>(`/api/editBooking/${license}` ,bookingform).subscribe({
-            next:(resData) => this.updateMessage = resData.message
+            next:(resData) => {this.updateMessage = resData.message}
         })
 
         
@@ -324,11 +348,12 @@ getBookingByDriversLicense(license: number){
 
      addComplaint(complaint :Complaints){
         this.httpClient.post<{'message':string}>("api/addComplaint",complaint).subscribe( {
-            next:(resData) => this.complaintMessages = resData.message
+            next:(resData) => {this.complaintMessages = resData.message}
         }
 
         )
         this.complaintNotifications.push(complaint)
+        this.save();
 
     }
 

@@ -1,20 +1,24 @@
-
+ 
  <div class="find"> 
-<form (ngSubmit)="getCar()">
+ 
+<form (ngSubmit)="getCar()" #f="ngForm">
   
      <p>
-    <input name="name"placeholder="Enter car-name"  type="text"  [(ngModel)]="name"/></p>
-    <button class="button">SearchCar</button>
-
+    <input name="name"placeholder="Enter car-name"  type="text" required [(ngModel)]="name"/></p>  
+@if( car == undefined){
+    <h4>Car not found</h4>
+ }
+    <button [disabled]="!f.valid" data="disabled" class="button">SearchCar</button>
+     
+      
        
      </form > 
+  
      </div >
     
-   
+  
 
-     <!-- @for(names of bookings; track name){
-    @if (!names.includes(name)) {
-      <h4>Invalid name</h4>  -->
+     @if(printCar.name){
 
      <div class="update">
     <p>
@@ -38,22 +42,7 @@
       </div>
 
       
-              
-   <!-- </form> 
-    </div>  --> 
-
-
-
-  
-
-
-    <!-- }
-   } -->
-
-
-
-    
-  
+            
 
 <div class="box2">
  <img [src]="printCar.picture" >
@@ -65,10 +54,6 @@
 
  
 
-
-
-
-
-
+     }
    
-<h1>{{carMessages}}</h1>
+<h3>{{carMessages}}</h3>

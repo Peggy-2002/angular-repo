@@ -2,12 +2,12 @@
 
 
 
-<div  class="allOver">
-<div class="box">
-    <form class="placeholder" (ngSubmit)="submitBooking()">
+<div  class="allOver"> 
+  <div class="box">
+    <form class="placeholder" (ngSubmit)="submitBooking()" #f="ngForm">
         <h2>finding-bookings</h2>
         <p>
-        <input name="license" class="input" [(ngModel)]="license" type="text" placeholder="Enter drivers-licence" />
+        <input name="license" class="input" [(ngModel)]="license" type="text" required placeholder="Enter drivers-licence" />
         </p>
       
      
@@ -17,7 +17,7 @@
 
 
         <p> 
-         <button   class=dropdown-button  (click)="findBookingByDriversLicence()">find Booking</button>
+         <button  [disabled]="!f.valid" data="disabled" class class=dropdown-button  (click)="findBookingByDriversLicence()">find Booking</button>
 
          </p>
          @if(messages == undefined){
@@ -25,9 +25,7 @@
 
          }
          
-
-
-           </form>
+    </form>
 
     @if(messages){
                  <p>
@@ -69,7 +67,7 @@
     
            
                   
-                <form  class="box" (ngSubmit)="submitBooking()">
+                <form   (ngSubmit)="submitBooking()" #f="ngForm">
        
                        <h2>update-bookings</h2> 
                          <p>
@@ -87,17 +85,14 @@
 
                         
 
-<<<<<<< HEAD
-=======
     
                           <p>
->>>>>>> d4ba94b1033d44430c4cf250bc4fa0cb3db9eb22
                          <input type="drivers-licence"  name ="drivers-licence" [placeholder]="getBooking.license" required [(ngModel)]="license"  />
                          </p>
 
                           
                         <p>
-                        <select id="car-name"  name="car-name"  required [(ngModel)]="carName">
+                        <select id="car-name"  name="car-name"   [(ngModel)]="carName">
                        <option disabled selected hidden value="">car-name</option>
 
                        @for(car of carNames; track car.name){
@@ -107,9 +102,8 @@
                           }
                          </select><br />
                           </p>
-     
+                          <h4>{{carmessage}}</h4>
                           <p>
-
                           <input type="date"  name ="startDate" placeholder="pickUpDate" required   [(ngModel)]="pickUpDate" />
                           </p>
 
@@ -118,20 +112,22 @@
                          <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/>
                             </p>
                         @if(dropOfDate < pickUpDate){
-                           <h1>Please enter valid dates</h1>
+                           <h4>Please enter valid dates</h4>
                              }
     
         
 
-                             <button   class ="dropdown-button" type="submit">save</button>
+                             <button  [disabled]="!f.valid" data="disabled" class ="dropdown-button" type="submit">save</button>
                              
                              
                              <h4>{{message}}</h4>
+
     
                     </form>      
                     
                   }
                 
+  </div>
 </div>
 
                 

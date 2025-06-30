@@ -30,7 +30,8 @@ click=false;
 
   remove(){
      this.click = false;
-     this.dataService.bookings = [];
+    localStorage.clear();
+       this.dataService.bookings = [];
     this.dataService.forms =[];
     this.router.navigate(["/admin"])
 

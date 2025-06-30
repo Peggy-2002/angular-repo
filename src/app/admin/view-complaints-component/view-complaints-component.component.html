@@ -1,16 +1,14 @@
 
 
 <div id="box">
-    <!-- @if(clicks){ -->
-    <!-- <div id="header">Complaints</div>  -->
+    
  @for(booking of bookings ;track booking.phoneNumber){
     <div>
         
         <button (click)="click()" id="complaints"[routerLink]="[booking.name,'viewComplaintsdetails']" >{{booking.name}}</button> 
     </div>
 }
-    <!-- } -->
-
+   
 @if(clicking){
     
 <router-outlet></router-outlet>

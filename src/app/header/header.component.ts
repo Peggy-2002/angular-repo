@@ -2,6 +2,7 @@ import { Component,inject } from '@angular/core';
 import { RouterOutlet,Router } from '@angular/router';
 import { Car } from '../model';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +15,19 @@ export class HeaderComponent {
 car : Car[] = []
 dropOfdate='';
 pickUpdate='';
-
+message='';
 click=false;
 
-message ="Enter values";
+messageses="No cars available for booking"
+   newCar:Car[]=[]
+   
+   status ='Available';
 
+
+
+constructor(private dataService:DataService){
+
+}
 
 
   createAcount(){
@@ -35,10 +44,7 @@ message ="Enter values";
     this.router.navigate(["/reservations"])
 
   }
-  // vehicles(){
-  //   this.router.navigate(["/cars"])
-    
-  // }
+
 
   vehicles(){
     this.router.navigate(["/cars"])
@@ -50,20 +56,51 @@ message ="Enter values";
   }
 
   vehicle(){
-    if(this.pickUpdate !== ''  && this.pickUpdate !== ''){
+    this.click=true;
+    if(this.pickUpdate !== ''  && this.pickUpdate !== '' ){
       this.router.navigate(["/vehicle"])
+    
     }else{
-      this.message;
+    this.message ="Can't find cars please enter dates";
 
     }
-    this.click=true;
     
     
   }
-  get messages(){
 
+  get messages(){
     return this.message
   }
+
+  
+      ngOnInit(): void {
+    
+            this.dataService.getCars().subscribe({
+              next: (resData) => {
+                for(let i =0 ;i < resData.length;i++){
+                  if(resData[i].status === this.status){
+                    this.newCar.push(resData[i])
+
+                  }
+                }
+                 console.log(this.newCar)
+              },
+              error:(err) => {
+                console.error("Failed to lad cars",err)
+              }
+                
+            });
+
+             
+     
+      }
+get cars(){
+        return this.newCar;
+      }
+
+
+
+
 
 
 

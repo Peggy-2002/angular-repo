@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
+import { Car } from '../../model';
+
 
 @Component({
   selector: 'app-update-car-component',
@@ -8,52 +10,58 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './update-car-component.component.html',
   styleUrl: './update-car-component.component.css'
 })
-export class UpdateCarComponentComponent {
+export class UpdateCarComponentComponent implements OnInit{
   constructor(private dataService : DataService){
   
     }
-    click = true;
-    clicks = false;
+    
 
-  name='';
+    name='';
 
     names="";
     picture='';
     seater='';
     status='';
     price =''
-    naming :string[]=[]
-  
+
+    naming :string[]=[];
+    
+    statuses ='Available';
+  click = true;
+
+    nami=''
     getCar(){
-      console.log(this.names)
+     
       this.dataService.searchCar(this.name)
-      this.click =false;
-      this.clicks = true;
-  
+     this.click = false;
+   const find = this.naming.find((finds) => finds == this.name)!
+      this.nami = find
   
     }
-    
+    get car(){
+      return this.nami
+    }
   
     ngOnInit(): void {
       this.dataService.getCars().subscribe({
         next :(resData) =>{
           for(let i=0; i<resData.length;i++){
-        this.naming.push(resData[i].name) 
+            
+            
+         this.naming.push(resData[i].name) 
     }
+        }
+          
+        
     
         
-        }
-        
-  
-      })
-      console.log(this.names)
+        });
+      
      
     }
-    get bookings(){
-      return this.naming
-      
-    }
 
+
+    
 
   
     get printCar(){
@@ -70,11 +78,10 @@ export class UpdateCarComponentComponent {
               price:+this.price
               
       })
-      this.clicks=false;
+      
       
     }
     get carMessages(){
-
       return this.dataService.updateCars
     }
     

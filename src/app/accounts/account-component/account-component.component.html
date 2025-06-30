@@ -14,10 +14,12 @@
 
    <p> <label>Password </label>
     <input   type="text"  pattern="\S+"  title="Password should not contain spaces"  id="password" name="password" [(ngModel)]="password"/></p>
-
+@if(finds){
+  <h3>password in use enter new password</h3>
+}
   
       <button  id="submitbutton">Submit</button>
-        <h1>{{signUpMessage}}</h1 >
+        <h4>{{signUpMessage}}</h4 >
       
   </form>
    

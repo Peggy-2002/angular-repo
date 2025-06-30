@@ -10,37 +10,34 @@
 
     <div id="login"><button (click)="login()" id="logins">Login</button></div>
     <div id="sign-up"  (click)="createAcount()"><button id="signs-up">Sign-up</button></div>
-    <!-- <div id="reservations"  (click)="reservations()"><button>Reservations</button></div> -->
+    
     
      <div id="reservations"  (click)="reservations()"><label>Reservations</label></div>
-     <!-- <button id="vehicles" (click)="vehicles()">Vehicles</button>  -->
+    
        <label id="vehicles" (click)="vehicles()">Vehicles</label> 
-    <!-- <button id="contact" (click)="contactUs()">Contact us</button>  -->
+    
     <label id="contact" (click)="contactUs()">Contact us</label>
     
-
+<main>
+    @if(cars.length == 0){
+    <h1>{{messageses}}</h1>
+}
+</main>
     
     <div class="myVehicle">
     <label id="label">pick-up-date</label>
     <input id="pickUpDate" type="date" placeholder="Pick-Up-Date" [(ngModel)]="pickUpdate"/>
-    <label id="label">Drop-Of-Date</label>
+    <label id="label">drop-of-date</label>
     <input  id="dropOfDate" type="date" placeholder="Drop-Of-Date" [(ngModel)]="dropOfdate"/>
     
     <button id="vehicle" (click)="vehicle()">FindMyVehicle</button>
-    
+
     </div>
 
-    <!-- <div class="allbotton"> -->
     
-    
-
-
-
-        
-    <!-- </div> -->
     @if(click){
 
-<h1>{{message}}</h1>
+<h3>{{messages}}</h3>
     }
     
 </body>
@@ -48,5 +45,4 @@
 <router-outlet ></router-outlet> 
 
 
-<!-- this router is for child login
-what happens in login will happen here -->
+

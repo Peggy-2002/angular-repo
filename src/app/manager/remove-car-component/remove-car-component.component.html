@@ -1,30 +1,33 @@
 
 <div class="removeCar">
-<form (ngSubmit)="getCar()">
+<form (ngSubmit)="getCar()" #f="ngForm">
     
      <p>
-    <input name="name" placeholder="Enter car-name" type="text"  [(ngModel)]="name"/></p>
-    <button   id="button">SearchCar</button>
+    <input  type="text"   placeholder="Enter car-name" name="name" required [(ngModel)]="name" />
+ </p>
+ @if( car == undefined){
+    <h4>Car not found</h4>
+ }
+
+    <button [disabled]="!f.valid" data="disabled" id="button">SearchCar</button>
    
-     <!-- @for(names of bookings; track name){ -->
-    @if (!names.includes(name)) {
-       <h4>Invalid name</h4>
     
-    
-    }
-   <!-- } -->
 
 </form>
 </div>
 
 
-@if(clicks){
- <img [src]="printCar.picture" >
+@if(printCar.name){
+   <div id="div1">
+   <img [src]="printCar.picture" >
      <h1>{{printCar.name}}</h1>
     <h4>Status: {{printCar.status}}</h4>
      <h4>Seater: {{printCar.seater}}</h4>
     <h4>Price: R{{printCar.price}}</h4>
      <button id="button1" (click)="removeCar()">Remove</button>
-
+</div>
 }
-<h1>{{carMessages}}</h1>
+
+
+
+<h3>{{carMessages}}</h3>

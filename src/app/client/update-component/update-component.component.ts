@@ -24,6 +24,8 @@ carNames:Car[]=[];
 numbers:string[]=[];
 finds=''
 status ='Available';
+carmessage='';
+
 
   findBookingByDriversLicence(){
     
@@ -58,6 +60,7 @@ status ='Available';
       dropOfDate : this.dropOfDate,
       carName :this.carName
     })
+   
     }else{
       this.dataService.editBooking(+this.license,{
       name :this.name,
@@ -69,6 +72,7 @@ status ='Available';
       carName :this.getBooking.carName
     })
     }
+    this.carmessage = "Old car will be saved in your updated booking"
     
 
   }

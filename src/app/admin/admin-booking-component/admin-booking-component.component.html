@@ -1,26 +1,26 @@
-
+<div id="back"></div>
 <div>
 
 
  <form (ngSubmit)="onSubmit()" #f="ngForm">
         <h2>Booking a Car</h2> 
-     <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
+     <p><input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" /></p>
 
-     <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+   <p>  <input type="text"  name ="surname"  placeholder="Surname"  required  [(ngModel)]="surname" /></p>
       
        
-        <select id="car-name"  name="car-name"  required [(ngModel)]="carName">
-          <option disabled selected hidden value="">car-name</option>
+       <p><select id="car-name"  name="car-name"  required [(ngModel)]="carName">
+          <option disabled selected hidden value="">Car-name</option>
 
              @for(car of carNames; track car.name){
      
                     <h1>{{car.name}}</h1>
                     <option  [value]="car.name">{{car.name}}</option>
                 }
-            </select><br />
+            </select></p>
             
 
-     <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />
+   <p>  <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" /></p>
      
      @if(email && !email.toLowerCase().endsWith("@gmail.com")){
           <h4>Invalid email</h4>
@@ -28,7 +28,7 @@
      }
 
 
-     <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license"      [(ngModel)]="license"  />
+  <p>   <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license"      [(ngModel)]="license"  /></p>
      @if(message){
           <h3>Booking code already in use</h3>
 
@@ -40,15 +40,15 @@
           }
 
 
-    <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
+   <p> <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" /></p>
 
-    <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/> 
+   <p> <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/> </p>
     @if(dropOfDate < pickUpDate){
-     <h1>Please enter valid dates</h1>
+     <h4>Please enter valid dates</h4>
     }
 
      
-         <button [disabled]="!f.valid" data="disabled" >Submit</button> 
+        <p> <button [disabled]="!f.valid" data="disabled" >Submit</button> 
 
          <h3>{{messages}}</h3>
 

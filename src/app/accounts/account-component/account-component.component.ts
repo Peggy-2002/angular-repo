@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './account-component.component.html',
   styleUrl: './account-component.component.css'
 })
-export class AccountComponentComponent {
+export class AccountComponentComponent implements OnInit{
   constructor(private dataService :DataService){
 
   }
@@ -18,20 +18,23 @@ export class AccountComponentComponent {
   surname='';
   email='';
   password='';
+  passwords:string[]=[];
+  finds=''
   
 
    onSubmit(){
+   const find = this.passwords.find((code) => code == this.password)!
+   this.finds = find
+   if(find == undefined){ 
     this.dataService.onSubmit({name:this.name,
     surname:this.surname,
     email:this.email,
     password:this.password
   });
-  console.log(
-    this.name,
-   this.surname,
-    this.email,
-    this.password 
-  )
+}
+
+     console.log(this.finds)
+     
   
 }
 
@@ -40,5 +43,27 @@ get signUpMessage() {
       
    
   }
+ ngOnInit(): void {
+    
+            this.dataService.getPassword().subscribe({
+              next: (resData) => {
+                
+                for(let i =0 ;i < resData.length;i++){
+                 this.passwords.push(resData[i].password)
+                    
+
+
+                  
+                }
+                console.log(this.passwords)
+              }
+              
+                
+                
+            });
+          }
+
+
+
 
 }

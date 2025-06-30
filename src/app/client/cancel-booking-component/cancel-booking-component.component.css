@@ -3,7 +3,7 @@ h2{
     font-size: large;
     font-style:oblique;
     color:#6e6d6d;
-    /* padding: 20px; */
+    
     margin: 20px;
     text-align: center;
     
@@ -55,7 +55,7 @@ label{
     box-shadow: 0 0 10px rgba(83, 219, 224, 0.1);
 
 
-}
+} 
 
 
 .box {

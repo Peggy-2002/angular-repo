@@ -1,0 +1,17 @@
+div{border: rgb(68, 68, 184);
+width: 70px;
+height: 90px;
+ transform: translate(130px,-320px); 
+
+display: flex;
+flex-direction: column; 
+
+ background-color: white;
+box-shadow:  rgb(146, 183, 233);
+width: 150px;
+height: 110px; 
+align-items: center;
+
+margin-top:-10px;
+position: absolute;
+}

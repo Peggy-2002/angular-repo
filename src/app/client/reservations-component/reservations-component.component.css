@@ -18,3 +18,30 @@
     margin-top:- 145px;
     width: 125px; 
 } */
+ /* .box{
+   margin-left: 370px; 
+   margin-top: -20px;
+   width: 135px;
+   font-size: larger;
+   font-style:normal;
+   font-weight: 500;
+
+}  */
+
+.box{border: rgb(68, 68, 184);
+width: 70px;
+height: 90px;
+transform: translate(350px,-280px);
+
+display: flex;
+flex-direction: column; 
+ 
+ background-color: white;
+box-shadow:  rgb(146, 183, 233);
+width: 150px;
+height: 110px; 
+align-items: center;
+
+margin-top:-10px;
+position: absolute;
+}

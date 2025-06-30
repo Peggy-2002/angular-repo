@@ -34,6 +34,7 @@ clicking = false;
 
  remove(){
       this.clicking =false;
+      localStorage.clear();
       this.clicks = false;
       this.dataService.complaintNotifications = [];
       this.booking =[];

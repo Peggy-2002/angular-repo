@@ -2,14 +2,15 @@
     transform: translate(1000px,-220px );
 }
 
-/* #form2{
-    margin-top:-400px;
-} */
+h3{
+   transform: translate(10px,-200px);
+}
+
 .find{
      max-width: 400px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(83, 219, 224, 0.1);
@@ -47,7 +48,7 @@
      max-width: 400px;
     margin: opx;
     padding: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(83, 219, 224, 0.1);

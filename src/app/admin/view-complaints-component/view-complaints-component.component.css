@@ -6,17 +6,11 @@
 }
 
 #complaints:hover {
-    background-color: #0C0950;
+    
     color: aliceblue;
+    background-color: #007bff
 }
 
-/* #header {
-    display: flex;
-    justify-content: center;
-    width: 500px;
-    font-size: larger;
-    font-weight: bolder;
-} */
 
 #box {
     margin-top: 20px;
@@ -30,6 +24,6 @@
     cursor: pointer;
 }
 #remove:hover {
-    background-color: #0C0950;
+   background-color: #007bff ;
     color: aliceblue;
 }

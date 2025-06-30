@@ -97,6 +97,6 @@ ngOnInit(): void {
 
   get cancelMessage(){
     
-    return this.dataService.cancelMessages
+    return this.dataService.cancelMessage
   }
 }

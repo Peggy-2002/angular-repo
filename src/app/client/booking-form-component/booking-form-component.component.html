@@ -11,7 +11,7 @@
      <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
       
      </p>
-      <!-- <input type="text" id="cars" name ="car-name"  placeholder="car-name"  required [(ngModel)]="carName" />    -->
+      
        
         <select id="car-name"  value="Cars" name="car-name" [(ngModel)]="carName">
             <option disabled selected hidden value="" id="o">car-name</option>
@@ -20,7 +20,7 @@
                     <h1>{{car.name}}</h1>
                     <option [value]="car.name">{{car.name}}</option>
                 }
-            </select><br />
+            </select>
             
     <p>
      <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />

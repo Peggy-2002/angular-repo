@@ -1,24 +1,27 @@
 #remove{
-    transform: translate(800px,-100px);
+    transform: translate(800px,50px);
     width: 200px;
     margin-top: 3px;
     border-radius: 10px;
     cursor: pointer;
 }
 #remove:hover {
-    background-color: #0C0950;
+    
     color: aliceblue;
+    background-color: #007bff
 }
 #bookings{
     width: 500px;
     margin-top: 3px;
     border-radius: 10px;
     cursor: pointer;
+    
 }
 
 #bookings:hover {
-    background-color: #0C0950;
+    
     color: aliceblue;
+    background-color: #007bff
 }
 
 

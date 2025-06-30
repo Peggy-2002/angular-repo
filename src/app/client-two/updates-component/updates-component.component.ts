@@ -28,6 +28,7 @@ status ='Available';
 
    booking!:Forms;
 cancellationFee=''
+carmessage=''
 
 ngOnInit(): void {
     this.dataService.getBookings().subscribe({
@@ -99,6 +100,7 @@ this.dataService.getCars().subscribe({
       dropOfDate : this.dropOfDate,
       carName :this.bookings.carName
   })
+    this.carmessage ="Old car will be saved in your updated booking"
 
   }
   console.log(this.name, this.surname,this.email,this.license,this.pickUpDate,this.dropOfDate)

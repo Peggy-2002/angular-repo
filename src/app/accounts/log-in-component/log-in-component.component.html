@@ -12,11 +12,14 @@
 
    <p> <label>Password </label>
     <input   type="text"  name="password" [(ngModel)]="enteredpassword"/></p>
+     @if(finds == undefined){
+        <h4>Invalid password</h4>
+       }
 
   
        <button id="button" type="submit">Login</button>
-
-       <!-- <button id="forgotpassword">Reset password</button> -->
+       
+      
   </form>
 </div>
 
