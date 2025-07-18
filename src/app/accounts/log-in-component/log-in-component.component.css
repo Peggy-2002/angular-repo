@@ -1,40 +1,54 @@
 #login{
     margin-left: 1400px;
-   transform: translate(50px,-270px);
+    transform: translate(-700px,300px);
     background-color: #007bff;
     height:192px;
-    width:220px;
-    padding: 3px;
+    width:520px;
+    padding: 6px;
    
 }
 #form{
     background-color: white;
     padding: 20px;
+    height: 112px;
 
 }  
 
 
  #button:active{
-    background-color: deepskyblue;
+    background-color: #007bff;
     border: 0cap;
 }
 #button{
 
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 20px;
-    background-color: #007bff;
-    color: azure;
+    background-color:  #007bff;
+    color: white;
     border-radius: 5px;
+    width: 200px;
 } 
 
  #name{
     margin-top: 7px;
 }
-#forgotpassword:active{
-background-color: deepskyblue;
-    border: 0cap;
-}
+
 #manager{
     position: relative;
     bottom:50px;
+} 
+
+#divs{
+    background-color: #007bff;
+    height: 50px;
+}
+h1{
+    
+transform: translate(30px,-50px);
+color: white;
+font-size: 20px;
+ 
+
+ 
+
 } 

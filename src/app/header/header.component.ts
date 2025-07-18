@@ -18,7 +18,7 @@ pickUpdate='';
 message='';
 click=false;
 
-messageses="No cars available for booking"
+messageses="SORRY! NO cars available today for booking"
    newCar:Car[]=[]
    
    status ='Available';

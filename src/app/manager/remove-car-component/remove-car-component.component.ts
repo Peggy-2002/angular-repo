@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-remove-car-component',
@@ -12,9 +13,8 @@ export class RemoveCarComponentComponent implements OnInit{
   constructor(private dataService : DataService){
 
   }
-  click = true;
-  clicks = true;
-
+  router = inject(Router)
+  
   name =""
   names :string[]=[]
    naming =''
@@ -64,7 +64,7 @@ export class RemoveCarComponentComponent implements OnInit{
   getCar(){
     console.log(this.name)
     this.dataService.searchCar(this.name)
-    this.click =false;
+    
     const find = this.names.find((finds) => finds == this.name)!
       this.naming = find
       
@@ -83,8 +83,10 @@ get car(){
   }
 
   removeCar(){
-    this.dataService.removeCar(this.printCar.name)
-    this.clicks
+    this.dataService.removeCar(this.name)
+     this.dataService.car = undefined as any;
+    
+    this.router.navigate(["/manager"])
     
   }
   get carMessages(){

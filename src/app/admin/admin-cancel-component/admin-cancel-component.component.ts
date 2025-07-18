@@ -1,19 +1,20 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
+import { Component, OnInit,inject } from '@angular/core';
 import { DataService } from '../../data.service';
-import { Bookings } from '../../model';
+import { Forms, Bookings } from '../../model';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-cancel-booking-component',
+  selector: 'app-admin-cancel-component',
   imports: [FormsModule],
-  templateUrl: './cancel-booking-component.component.html',
-  styleUrl: './cancel-booking-component.component.css'
+  templateUrl: './admin-cancel-component.component.html',
+  styleUrl: './admin-cancel-component.component.css'
 })
-export class CancelBookingComponentComponent implements OnInit {
+export class AdminCancelComponentComponent implements OnInit {
 
-  private dataService = inject(DataService);
-  router =inject(Router)
+private dataService = inject(DataService);
+router = inject(Router)
+  
 
   name =''
   surname =''
@@ -61,8 +62,7 @@ export class CancelBookingComponentComponent implements OnInit {
 
 
     })
-    this.router.navigate(["/"])
-
+      this.router.navigate(["/admin"])
   }
 ngOnInit(): void {
     this.dataService.getBookings().subscribe({

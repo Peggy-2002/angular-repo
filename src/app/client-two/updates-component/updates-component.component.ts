@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,inject, OnInit } from '@angular/core';
 import { Forms } from '../../model';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
 import { Car } from '../../model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-updates-component',
@@ -10,10 +11,11 @@ import { Car } from '../../model';
   templateUrl: './updates-component.component.html',
   styleUrl: './updates-component.component.css'
 })
-export class UpdatesComponentComponent {
+export class UpdatesComponentComponent implements OnInit{
 
 constructor(private dataService:DataService){
   }
+  router =inject(Router)
   name='';
   surname ='';
   carName = '';
@@ -101,7 +103,7 @@ this.dataService.getCars().subscribe({
       carName :this.bookings.carName
   })
     this.carmessage ="Old car will be saved in your updated booking"
-
+this.router.navigate(["/client"])
   }
   console.log(this.name, this.surname,this.email,this.license,this.pickUpDate,this.dropOfDate)
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { Forms, Bookings } from '../../model';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cancel-bookings-component',
@@ -12,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class CancelBookingsComponentComponent implements OnInit{
   constructor(private dataService:DataService){
   }
+  router = inject(Router)
 
    booking!:Forms;
 cancellationFee=''
@@ -64,7 +66,7 @@ deleteBooking(){
 
 
     })
-
+this.router.navigate(["/client"])
   }
 get cancelMessage(){
     

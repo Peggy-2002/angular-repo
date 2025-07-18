@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
 import { Car } from '../../model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,9 +15,10 @@ export class UpdateCarComponentComponent implements OnInit{
   constructor(private dataService : DataService){
   
     }
+    router = inject(Router)
     
 
-    name='';
+    namee='';
 
     names="";
     picture='';
@@ -32,9 +34,9 @@ export class UpdateCarComponentComponent implements OnInit{
     nami=''
     getCar(){
      
-      this.dataService.searchCar(this.name)
+      this.dataService.searchCar(this.namee)
      this.click = false;
-   const find = this.naming.find((finds) => finds == this.name)!
+   const find = this.naming.find((finds) => finds == this.namee)!
       this.nami = find
   
     }
@@ -70,7 +72,7 @@ export class UpdateCarComponentComponent implements OnInit{
     }
   
     updateCar(){
-      this.dataService.updateCar({name:this.name,
+      this.dataService.updateCar({name:this.names,
               picture:this.picture,
               seater:+this.seater,
               status:this.status,
@@ -78,7 +80,9 @@ export class UpdateCarComponentComponent implements OnInit{
               price:+this.price
               
       })
-      
+       this.dataService.car = undefined as any;
+    
+    this.router.navigate(["/manager"])
       
     }
     get carMessages(){

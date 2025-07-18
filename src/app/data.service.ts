@@ -55,10 +55,12 @@ export class DataService {
     onSubmit(signUp :SignUp){
         
         this.httpClient.post<{"message" : string}>("/api/signUp",signUp).subscribe({
-            next:(resData) => {this.signUpMessage = resData.message}
+            next:(resData) => {  
+                alert(resData.message)
+            }
         });
         
-        console.log(this.signUpMessage)
+        
     
     }
 
@@ -97,7 +99,9 @@ login(log : Login){
      cars(cars:Car){
          
         this.httpClient.post<{"message" : string}>("/api/addCar",cars).subscribe({
-            next:(resData) => {this.addCarMessage = resData.message}
+            next:(resData) => {
+                alert(resData.message)
+            }
         });
 
 
@@ -132,9 +136,12 @@ login(log : Login){
 
     removeCar(name:string){
         this.httpClient.delete<{'message' :string}>(`/api/removeCar/${name}`).subscribe({
-            next:(resData) =>{ this.deleteCarMessage = resData.message}
+            next:(resData) =>{ 
+                alert(resData.message)
+            }
+             
         });
-
+     
     }
 
     get carMessage(){
@@ -143,7 +150,9 @@ login(log : Login){
 
     updateCar(car:Cars){
        this.httpClient.patch<{'message' :string}>(`/api/updateCar`,car).subscribe({
-            next:(resData) => {this.updateMessage = resData.message}
+            next:(resData) => {
+                alert(resData.message)
+            }
         }); 
 
     }
@@ -161,8 +170,8 @@ login(log : Login){
         console.log(bookings)
 
         this.httpClient.post<{'message':string}>("/api/booking",bookings).subscribe({
-            next:(resData) => {this.bookingMessage = resData.message
-                console.log(this.bookingMessage)
+            next:(resData) => {
+               alert(resData.message)
             }
             
         });
@@ -220,7 +229,7 @@ private save(){
         
 
         this.httpClient.post<{'message':string}>("/api/bookings",forms).subscribe({
-            next:(resData) => {this.bookingMessages = resData.message}
+            next:(resData) => {alert(resData.message)}
         });
         this.forms.push(forms)
         this.save();
@@ -293,8 +302,8 @@ private save(){
     deleteBooking(bookingform :Bookings){
         
         this.httpClient.post<{'message':string}>("api/update-bookings",bookingform).subscribe( {
-            next:(resData) => {this.cancelMessage = resData.message
-                
+            next:(resData) => {
+                alert(resData.message)
 
             }
         }
@@ -313,8 +322,9 @@ private save(){
     console.log(bookingform)
         
         this.httpClient.patch<{'message':string}>("api/returnCar",bookingform).subscribe( {
-            next:(resData) => {this.returnCarMessage =resData.message
-             console.log(this.returnCarMessage)
+            next:(resData) => {
+                alert(resData.message)
+             
             }
         }
 
@@ -336,7 +346,7 @@ private save(){
     editBooking(license :number ,bookingform:BookingForm){
         console.log(license,bookingform)
         this.httpClient.put<{'message':string}>(`/api/editBooking/${license}` ,bookingform).subscribe({
-            next:(resData) => {this.updateMessage = resData.message}
+            next:(resData) => {alert(resData.message)}
         })
 
         
@@ -348,7 +358,7 @@ private save(){
 
      addComplaint(complaint :Complaints){
         this.httpClient.post<{'message':string}>("api/addComplaint",complaint).subscribe( {
-            next:(resData) => {this.complaintMessages = resData.message}
+            next:(resData) => {alert(resData.message)}
         }
 
         )

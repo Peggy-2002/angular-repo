@@ -1,0 +1,137 @@
+
+<div  class="allOver"> 
+  <div class="box">
+    <form class="placeholder" (ngSubmit)="submitBooking()" #f="ngForm">
+        <h2>finding-bookings</h2>
+        <p>
+        <input name="license" class="input" [(ngModel)]="license" type="text" required placeholder="Enter drivers-licence" />
+        </p>
+      
+     
+       @if(license && license.length != 6){
+               <h4>License must be exactly 6 characters long.</h4>
+          }
+
+
+        <p> 
+         <button  [disabled]="!f.valid" data="disabled" class class=dropdown-button  (click)="findBookingByDriversLicence()">find Booking</button>
+
+         </p>
+         @if(messages == undefined){
+          <h3>Invalid booking code</h3>
+
+         }
+         
+    </form>
+
+    @if(messages){
+                 <p>
+                <input type="text"  name ="name"  [placeholder]="getBooking.name"  required [(ngModel)]="name" />
+                 </p> 
+
+                <p>
+                   <input type="text"  name ="surname" [placeholder]="getBooking.surname"  required  [(ngModel)]="surname" />
+                 </p>
+
+                <p>
+                <input type="text"  name ="email"  [placeholder]="getBooking.email"  required [(ngModel)]="email" />
+                </p>
+
+                 <p>
+                <input type="text"  name ="email"  [placeholder]="getBooking.license"  required [(ngModel)]="license" />
+                </p>
+
+                <p>
+                <input type="text"  name ="carName"  [placeholder]="getBooking.carName"  [(ngModel)]="carName" />
+                 </p> 
+
+                <p>
+                <input type="txt"  name ="startData" [placeholder]="getBooking.pickUpDate" required  [(ngModel)]="pickUpDate" />
+                </p>
+
+                 <p>
+                 <input type="txt"  name ="end-date" [placeholder]="getBooking.dropOfDate" required [(ngModel)]="dropOfDate"  />
+                </p>
+               
+
+
+
+
+
+
+
+
+    
+           
+                  
+                <form   (ngSubmit)="submitBooking()" #f="ngForm">
+       
+                       <h2>update-bookings</h2> 
+                         <p>
+                         <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
+                        </p>
+
+                         <p>
+                        <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
+                         </p>
+
+                         <P>
+                         <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />
+                          </P>
+
+
+                        
+
+    
+                          <p>
+                         <input type="drivers-licence"  name ="drivers-licence" [placeholder]="getBooking.license" required [(ngModel)]="license"  />
+                         </p>
+
+                          
+                        <p>
+                        <select id="car-name"  name="car-name"   [(ngModel)]="carName">
+                       <option disabled selected hidden value="">car-name</option>
+
+                       @for(car of carNames; track car.name){
+     
+                         <h1>{{car.name}}</h1>
+                         <option  [value]="car.name">{{car.name}}</option>
+                          }
+                         </select><br />
+                          </p>
+                          <h4>{{carmessage}}</h4>
+                          <p>
+                          <input type="date"  name ="startDate" placeholder="pickUpDate" required   [(ngModel)]="pickUpDate" />
+                          </p>
+
+                           <p>
+
+                         <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/>
+                            </p>
+                        @if(dropOfDate < pickUpDate){
+                           <h4>Please enter valid dates</h4>
+                             }
+    
+        
+
+                             <button  [disabled]="!f.valid" data="disabled" class ="dropdown-button" type="submit">save</button>
+                             
+                             
+                             <h4>{{message}}</h4>
+
+    
+                    </form>      
+                    
+                  }
+                
+  </div>
+</div>
+
+                
+                
+            
+        
+    
+
+
+    

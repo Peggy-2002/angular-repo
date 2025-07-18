@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
 import { BookingForm } from '../../model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-return-car-component',
@@ -12,6 +13,7 @@ import { BookingForm } from '../../model';
 export class ReturnCarComponentComponent implements OnInit{
 click=false;
 booking :BookingForm[] =[]
+router = inject(Router)
   constructor(private dataService :DataService){
 
   }
@@ -102,7 +104,7 @@ this.dataService.getCars().subscribe({
 
 
     });
-   
+   this.router.navigate(["/admin"])
 
   }
 

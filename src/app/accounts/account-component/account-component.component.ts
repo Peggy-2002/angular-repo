@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,inject} from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account-component',
@@ -13,6 +13,7 @@ export class AccountComponentComponent implements OnInit{
   constructor(private dataService :DataService){
 
   }
+   router = inject(Router)
 
   name='';
   surname='';
@@ -32,6 +33,7 @@ export class AccountComponentComponent implements OnInit{
     password:this.password
   });
 }
+this.router.navigate(["/"]);
 
      console.log(this.finds)
      

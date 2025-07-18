@@ -1,85 +1,90 @@
 #addCar{
-    transform: translate(350px,30px);
     
+ transform: translate(552px); 
     border: none;
     padding: 0;
     background:none;
     color:white;
-    color: white;
-    font-size: large; 
+    text-decoration:underline;
+
+
+
     
 }
 
 
 
 #vehicles{
-    
-    transform: translate(400px,30px);
-    color: white;
-    font-size: large;
+     transform: translate(600px); 
     border: none;
     padding: 0;
     background:none;
     color:white;
+    text-decoration:underline;
+
+
 
 
     
 }
 
 #remove{
-    transform: translate(500px,30px);
-     
-   border: none; 
-    padding: 0;
-    background:none;
-    color:white;
-    color: white;
-    font-size: large;
-}
-
-#update{
-    transform: translate(600px,30px);
-     
-     border: none;
-    padding: 0;
-    background:none;
-    color:white;
-    color: white;
-    font-size: large;
-
-}
-
-#viewBookings{
-    transform: translate(700px,30px);
-    
-     border: none;
-    padding: 0;
-    background:none;
-    color:white;
-    
-    font-size: large;
-
-}
-
-.rebon{
-  background-color: #007bff;
-  height: 75px;
-}
-#logOut{
-    
-    transform: translate(1100px,30px);
+     transform: translate(660px); 
     border: none;
     padding: 0;
     background:none;
     color:white;
-    font-size: large;
-    
+    text-decoration:underline;
+}
+
+#update{
+transform: translate(730px); 
+     border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    text-decoration:underline;
+
+
+}
+
+#viewBookings{
+transform: translate(785px); 
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    text-decoration:underline;
+
     
 }
 
-#logOut :hover{
+.rebon{
+  background-color:  #007bff;
+  height: 75px;
+}
+#logOut{
     
-    background-image: -moz-linear-gradient(to right ,rgb(184, 184, 184), #143b8e);
+    
+    transform: translate(1250px); 
+    border: none;
+    padding: 0;
+    background:none;
+    color:white;
+    
+    
+}
+#logOut.active{
+    text-decoration: underline;
+ }
+
+#logo{
+    
+
+transform: translate(20px,30px);
+ color:white;
+font-size: 20px; 
+left: 10px; 
 
 }
 

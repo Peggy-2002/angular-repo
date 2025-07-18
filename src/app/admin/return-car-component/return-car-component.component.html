@@ -72,13 +72,13 @@
       <label>In Good Condition</label>
      <select id="car-name"  value="Condition ?" name="In Good condition ?" [(ngModel)]="condition">
              
-                    <option >No</option>
-                    <option >Yes</option>
+                    <option >Bad</option>
+                    <option >Good</option>
                 
             </select><br />
 </p>
 
-     @if( condition === "No"){
+     @if( condition === "Bad"){
       <p>
        <label>Damaged Fee</label>
       <input type="number"  name ="damagedFee" required [(ngModel)]="damagedFee" />

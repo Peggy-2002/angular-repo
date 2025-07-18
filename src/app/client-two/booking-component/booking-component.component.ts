@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,inject, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { Car } from '../../model';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-component',
@@ -9,11 +10,12 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './booking-component.component.html',
   styleUrl: './booking-component.component.css'
 })
-export class BookingComponentComponent {
+export class BookingComponentComponent implements OnInit {
 
   constructor(private dataService:DataService){
 
   }
+  router = inject(Router)
   carNames:Car[]=[];
   numbers:string[] =[];
 
@@ -90,7 +92,7 @@ const find = this.numbers.find((code) => code == this.license)!
    
  });
 }
-
+this.router.navigate(["/client"])
 
   }
 get message():string{

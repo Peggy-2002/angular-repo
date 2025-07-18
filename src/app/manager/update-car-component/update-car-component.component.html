@@ -4,7 +4,7 @@
 <form (ngSubmit)="getCar()" #f="ngForm">
   
      <p>
-    <input name="name"placeholder="Enter car-name"  type="text" required [(ngModel)]="name"/></p>  
+    <input name="name"placeholder="Enter car-name"  type="text" required [(ngModel)]="namee"/></p>  
 @if( car == undefined){
     <h4>Car not found</h4>
  }
@@ -22,7 +22,7 @@
 
      <div class="update">
     <p>
-   <input type="text" placeholder="car-name"  name ="name" [(ngModel)]="name"/></p>
+   <input type="text" placeholder="car-name"  name ="name" [(ngModel)]="names"/></p>
 
    <p>
     <input type="text" placeholder="car-picture"  name="picture" [(ngModel)]="picture"/></p>

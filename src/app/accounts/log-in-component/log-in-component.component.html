@@ -1,23 +1,24 @@
 
 
-
+<div id="divs"></div>
+<h1>Car rental service</h1>
 
 <div id="login">
 
-  <form id="form" (ngSubmit)="onSubmit() "  >
+  <form id="form" (ngSubmit)="onSubmit() "  #f="ngForm" >
     
 
     <label>Email </label>
-    <input  type="text"  name="email" [(ngModel)]="enteredemail"/>
+    <input  type="text"  name="email" [(ngModel)]="enteredemail" required/>
 
    <p> <label>Password </label>
-    <input   type="text"  name="password" [(ngModel)]="enteredpassword"/></p>
+    <input   type="text"  name="password" [(ngModel)]="enteredpassword" required/></p>
      @if(finds == undefined){
         <h4>Invalid password</h4>
        }
 
   
-       <button id="button" type="submit">Login</button>
+       <button id="button" type="submit" [disabled]="!f.valid" data="disabled">Login</button>
        
       
   </form>

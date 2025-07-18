@@ -1,51 +1,60 @@
-<div id="allOver">
-<div id="boxe" class="box">
+
+<div id="back"></div>
+<div>
 
 
- <form (ngSubmit)="onSubmit()" >
-        <h2>Booking a Car</h2>
-     <p> 
-     <input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" />
-     </p>
-     <p>
-     <input type="text"  name ="surname"  placeholder="surname"  required  [(ngModel)]="surname" />
-      
-     </p>
+ <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <h2>Booking a Car</h2> 
+     <p><input type="text"  name ="name"  placeholder="Client-name"  required [(ngModel)]="name" /></p>
+
+   <p>  <input type="text"  name ="surname"  placeholder="Surname"  required  [(ngModel)]="surname" /></p>
       
        
-        <select id="car-name"  value="Cars" name="car-name" [(ngModel)]="carName">
-            <option disabled selected hidden value="" id="o">car-name</option>
+       <p><select id="car-name"  name="car-name"  required [(ngModel)]="carName">
+          <option disabled selected hidden value="">Car-name</option>
+
              @for(car of carNames; track car.name){
      
                     <h1>{{car.name}}</h1>
-                    <option [value]="car.name">{{car.name}}</option>
+                    <option  [value]="car.name">{{car.name}}</option>
                 }
-            </select>
+            </select></p>
             
-    <p>
-     <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" />
-    </p>
-    <p>
-     <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license" required [(ngModel)]="license"  />
-     </p>
-     <p>
-    <input type="date"  id="date" name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" />
-     </p>
 
-     <p>
+   <p>  <input type="email"  name ="email" placeholder="Email" required  [(ngModel)]=" email" /></p>
+     
+     @if(email && !email.toLowerCase().endsWith("@gmail.com")){
+          <h4>Invalid email</h4>
 
-    <input type="date"  id="date" name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDtae"/> 
-    </p>
+     }
+
+
+  <p>   <input type="drivers-licence"  name ="drivers-license" placeholder="Drivers-license"      [(ngModel)]="license"  /></p>
+     @if(message){
+          <h3>Booking code already in use</h3>
+
+         }
 
     
-        <button  >Book</button>
-    
-        <button class="dropdown-button" >Book</button>
+       @if(license && license.length != 6){
+               <h4>License must be exactly 6 characters long.</h4>
+          }
+
+
+   <p> <input type="date"  name ="startDate" placeholder="strat-date" required   [(ngModel)]="pickUpDate" /></p>
+
+   <p> <input type="date"  name ="endDate" placeholder="end-date" required  [(ngModel)]="dropOfDate"/> </p>
+    @if(dropOfDate < pickUpDate){
+     <h4>Please enter valid dates</h4>
+    }
+
+     
+        <p> <button [disabled]="!f.valid" data="disabled" >Submit</button> 
+
+         <h3>{{messages}}</h3>
 
 </form>
      </div>
-     </div>
 
-     <div>
-        <h2>your journey ,  your way</h2>
-     </div>
+    
+

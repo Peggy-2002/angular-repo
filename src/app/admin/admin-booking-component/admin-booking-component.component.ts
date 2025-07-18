@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
 
 import { Car } from '../../model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admin-booking-component',
   imports: [FormsModule],
@@ -14,6 +15,7 @@ export class AdminBookingComponentComponent {
   constructor(private dataService : DataService){
   
     }
+    router = inject(Router)
   
     
      status ='Available';
@@ -96,6 +98,7 @@ export class AdminBookingComponentComponent {
       
         })
       }
+      this.router.navigate(["/admin"])
         console.log(this.finds)
         
       }

@@ -1,24 +1,25 @@
 
-
+<div id="divs"></div>
+<h1>Car rental service</h1>
 
 <div id="createAccount">
-  <form id="form" (ngSubmit)="onSubmit() "  >
+  <form id="form" (ngSubmit)="onSubmit() "  #f="ngForm">
     <label>Name </label>
-   <input type="text" id="name" name ="name" [(ngModel)]="name"/>
+   <input type="text" id="name" name ="name" [(ngModel)]="name" required/>
 
    <p><label>Surname </label>
-    <input type="text"   id="surname" name="surname" [(ngModel)]="surname"/></p>
+    <input type="text"   id="surname" name="surname" [(ngModel)]="surname" required/></p>
 
     <label>Email </label>
-    <input  type="text" pattern="\S+"  title="Email should not contain spaces" id="email" name="email" [(ngModel)]="email"/>
+    <input  type="text" pattern="\S+"  title="Email should not contain spaces" id="email" name="email" [(ngModel)]="email" required/>
 
    <p> <label>Password </label>
-    <input   type="text"  pattern="\S+"  title="Password should not contain spaces"  id="password" name="password" [(ngModel)]="password"/></p>
+    <input   type="text"  pattern="\S+"  title="Password should not contain spaces"  id="password" name="password" [(ngModel)]="password" required/></p>
 @if(finds){
   <h3>password in use enter new password</h3>
 }
   
-      <button  id="submitbutton">Submit</button>
+      <button  id="submitbutton" [disabled]="!f.valid" data="disabled">Submit</button>
         <h4>{{signUpMessage}}</h4 >
       
   </form>

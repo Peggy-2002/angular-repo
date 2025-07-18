@@ -1,18 +1,18 @@
+
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DataService } from '../../data.service';
 import { Car } from '../../model';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-update-component',
+  selector: 'app-admin-update-component',
   imports: [FormsModule],
-  templateUrl: './update-component.component.html',
-  styleUrl: './update-component.component.css'
+  templateUrl: './admin-update-component.component.html',
+  styleUrl: './admin-update-component.component.css'
 })
-export class UpdateComponentComponent implements OnInit{
-  private dataService = inject(DataService);
-  router = inject(Router)
+export class AdminUpdateComponentComponent implements OnInit {
+private dataService = inject(DataService);
+router=inject(Router)
 
   name= ''
   surname = ''
@@ -75,7 +75,7 @@ carmessage='';
     })
     }
     this.carmessage = "Old car will be saved in your updated booking"
-    this.router.navigate(["/"])
+    this.router.navigate(["/admin"])
 
   }
 
@@ -121,3 +121,5 @@ ngOnInit(): void {
 
 
 }
+
+

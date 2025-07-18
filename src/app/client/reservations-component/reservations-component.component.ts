@@ -14,7 +14,7 @@ export class ReservationsComponentComponent {
   //   this.router.navigate(["/reservations/booking"])
   // }
   bookingform(){
-    this.router.navigate(["/booking"])
+    this.router.navigate(["/bookings"])
   }
   cancelBooking(){
     this.router.navigate(["/cancel"])

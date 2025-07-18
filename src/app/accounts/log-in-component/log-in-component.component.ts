@@ -34,6 +34,7 @@ const find = this.passwords.find((code) => code == this.enteredpassword)!
    
  })
 }
+
   }
 
 ngOnInit(): void {

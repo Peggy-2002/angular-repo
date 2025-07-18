@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { DataService } from '../../data.service';
 import { FormsModule } from '@angular/forms';
 import { Car } from '../../model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-car-component',
@@ -14,7 +15,7 @@ export class AddCarComponentComponent implements OnInit{
   constructor(private dataService : DataService) {
 
   }
-
+router = inject(Router)
   click=true;
 
   
@@ -25,15 +26,13 @@ export class AddCarComponentComponent implements OnInit{
   price= ''
 
 
-  //  booking :Car[] =[]
+ 
    names :string[]=[
     
     
 
    ]
-  //   constructor(private dataService : DataService){
   
-  //   }
   
     ngOnInit(): void {
       this.dataService.getCars().subscribe({
@@ -68,8 +67,8 @@ export class AddCarComponentComponent implements OnInit{
     price:+this.price
     });
     this.click =false
-    console.log(this.name,this.picture,this.seaters,this.status)
-
+   this.router.navigate(["/manager"]) 
+    
   }
 
 

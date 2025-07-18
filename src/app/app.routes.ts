@@ -33,6 +33,8 @@ import { ComplaintsDetailsComponentComponent } from './admin/complaints-details-
 import { VehicleComponentComponent } from './vehicle-component/vehicle-component.component';
 import { UpdatesComponentComponent } from './client-two/updates-component/updates-component.component';
 import { CancelBookingsComponentComponent } from './client-two/cancel-bookings-component/cancel-bookings-component.component';
+import { AdminCancelComponentComponent } from './admin/admin-cancel-component/admin-cancel-component.component';
+import { AdminUpdateComponentComponent } from './admin/admin-update-component/admin-update-component.component';
 
 
 export const routes: Routes = [
@@ -40,58 +42,18 @@ export const routes: Routes = [
     path:"",
     component:HeaderComponent,
     children:[
-       {
-         path:'login',
-        component:LogInComponentComponent,
-          
-
-        },
-        {
-        path:'account',
-        component:AccountComponentComponent
-        },
+   
 
        {
         path:'reservations',
         component:ReservationsComponentComponent,
-        children:[
-            //   {
-            //     path:'booking',
-            //     component:BookingFormComponentComponent
-            //   },
-            //   {
-                 
-            //      path:'cancel',
-            //      component:CancelBookingComponentComponent 
-                                
-            //   },
-
-            //   {
-            //     path:'update',
-            //     component:UpdateComponentComponent
-
-            //   }
-           ]
+       
         },
-        // {
-        //     path:'cars',
-        //     component:CarsComponent
-
-        // },
+        
         {
             path:'contactUs',
             component:ContactUsComponentComponent,
-            // children:[
-            //     {
-            //         path:'contact',
-            //         component:ContactComponentComponent
-            //     },
-
-            //     {
-            //         path:'questions',
-            //         component:QuestionsComponentComponent
-            //     }
-            // ]
+           
         }
 
 
@@ -106,10 +68,7 @@ export const routes: Routes = [
                         component:AddCarComponentComponent
 
                     },
-                    // {
-                    //     path:'car',
-                    //     component:CarsComponent
-                    // },
+                   
 
                     {
                         path:'remove',
@@ -216,11 +175,11 @@ export const routes: Routes = [
                             },
                             {
                                 path:'cancels',
-                                component:CancelBookingComponentComponent
+                                component:AdminCancelComponentComponent
                             },
                             {
                                 path:'update',
-                                component:UpdateComponentComponent
+                                component:AdminUpdateComponentComponent
                                 
                             }
                         ]
@@ -273,7 +232,7 @@ export const routes: Routes = [
                {
                  
                  path:'cancel',
-                 component:CancelBookingComponentComponent 
+                 component:CancelBookingComponentComponent
                                 
               },
 
@@ -286,6 +245,23 @@ export const routes: Routes = [
                         path:'car',
                         component:CarsComponent
                     },
+
+{
+         path:'login',
+        component:LogInComponentComponent,
+          
+
+        },
+
+{
+        path:'account',
+        component:AccountComponentComponent
+        },
+
+{
+                path:'bookings',
+                component:BookingFormComponentComponent
+              }
 
     ];
 
